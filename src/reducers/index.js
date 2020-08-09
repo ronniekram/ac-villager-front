@@ -1,10 +1,10 @@
-import {combineReducers} from 'redux'
-import islandReducer from './IslandReducer'
-import wishlistReducer from './WishlistReducer'
+import {combineReducers} from 'redux';
+import islandReducer from './IslandReducer';
+import villagerReducer from './VillagerReducer';
 
 const rootReducer = combineReducers({
   islandReducer,
-  wishlistReducer
+  villagerReducer,
 })
 
-export default rootReducer
+export default rootReducer;

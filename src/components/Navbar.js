@@ -4,7 +4,7 @@ import React from 'react';
 const Navbar = () => {
   return (
     <div>
-      <strong>Villager Track</strong> New Island | New Wishlist | Islands | Wishlists <br />
+      <strong>Villager Track</strong> New Island | Islands | Search Villagers <br />
     </div>
   )
 }
