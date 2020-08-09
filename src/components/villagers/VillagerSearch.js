@@ -3,7 +3,10 @@ import React from 'react';
 
 const VillagerSearch = () => {
   return (
-    <div>Hello, I am a villager search bar.</div>
+    <form>
+      <input type="search" />
+      <button>Find Villager</button>
+    </form>
   )
 }
 

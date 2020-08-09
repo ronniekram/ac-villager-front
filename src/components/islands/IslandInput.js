@@ -3,7 +3,13 @@ import React from 'react';
 
 const IslandInput = () => {
   return (
-    <div>Hello, I am island input.</div>
+    <form>
+      <label>Island Name: </label>
+      <input type="text"></input> <br />
+      <label>Island Owner: </label>
+      <input type="text"></input> <br />
+      <button type="submit">Create Island</button>
+    </form>
   )
 }
 

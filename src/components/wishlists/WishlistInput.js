@@ -3,7 +3,13 @@ import React from 'react';
 
 const WishlistInput = () => {
   return (
-    <div>Hello, I am a wishlist input.</div>
+    <form>
+    <label>Wishlist Name: </label>
+    <input type="text"></input> <br />
+    <label>Wishlist Owner: </label>
+    <input type="text"></input> <br />
+    <button type="submit">Create Wishlist</button>
+  </form>
   )
 }
 
