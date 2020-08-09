@@ -1,10 +1,10 @@
 import React from 'react';
 // import { Route } from 'react-router-dom'
 
-const Island = () => {
+const Islands = () => {
   return (
-    <div>Hello, I am an island.</div>
+    <div>Hello, I am islands.</div>
   )
 }
 
-export default Island;
+export default Islands;

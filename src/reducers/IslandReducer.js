@@ -6,7 +6,8 @@ export default function islandReducer(state = {villagers: []}, action) {
       return {...state, islands: [...state.islands, action.payload]}
     case 'ADD_VILLAGER': 
       let islands = state.islands.map(island => {
-        if (island.id === action.payload.id) {
+        // in addition to matching id, make sure villager count is less than 10
+        if (island.id === action.payload.id && island.villagers.count < 10) {
           return action.payload
         } else {
           return island
