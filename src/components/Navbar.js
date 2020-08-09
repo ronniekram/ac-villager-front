@@ -3,7 +3,9 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div>Hello I am a Nav Bar</div>
+    <div>
+      <strong>Villager Track</strong> New Island | New Wishlist | Islands | Wishlists <br />
+    </div>
   )
 }
 
