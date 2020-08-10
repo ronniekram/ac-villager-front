@@ -1,55 +1,75 @@
-import React from 'react';
-import {connect} from 'react-redux'
-import {addIsland} from '../actions/addIsland'
+// import React from 'react';
+// import {connect} from 'react-redux'
+// import {addIsland} from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/actions/addIsland.js'
 
-// const IslandInput = () => {
-//   return (
-//     <form>
-//       <label>Island Name: </label>
-//       <input type="text"></input> <br />
-//       <label>Island Owner: </label>
-//       <input type="text"></input> <br />
-//       <button type="submit">Create Island</button>
-//     </form>
-//   )
+
+// class IslandInput extends React.Component {
+//   state = {
+//     name: '',
+//     owner: ''
+//   }
+
+//   handleChange = (event) => {
+//     this.setState({
+//       [event.target.name]: event.target.value
+//     })
+//   }
+
+//   handleSubmit = (event) => {
+//     event.preventDefault();
+//     this.props.addIsland(this.state);
+//     this.setState({
+//       name: '',
+//       owner: ''
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h3>Create Island</h3>
+//         <form onSubmit={this.handleSubmit}>
+//           <label>Island Name: </label>
+//           <input type='text' name="name" value={this.state.name} /> 
+//             <br />
+//           <label>Owner's Name: </label>
+//           <input type='text' value={this.state.owner} name="owner" onChange={this.handleChange} />
+//             <br />
+//           <input type="submit" />
+//         </form>
+//       </div>
+//     )
+//   }
+
 // }
 
-class IslandInput extends React.Component {
-  state = {
-    name: '',
-    owner: ''
-  }
+// export default connect(null, {addIsland})(IslandInput);
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name] : event.target.value
-    })
-  }
+import React, { useState } from 'react';
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.props.addIsland(this.state)
-    this.setState({
-      name: '',
-      owner: ''
-    })
-  }
+function IslandInput() {
+  const [islandName, setIslandName] = useState("");
+  const [ownerName, setOwnerName] = useState("");
 
-  render() {
-    return (
-      <h3>Create Island</h3>
-      <form onSubmit={this.handleSubmit}>
+  return (
+    <div>
+      <form>
         <label>Island Name: </label>
-        <input type='text' placeholder='Island Name' value={this.state.name} /> <br />
-        <label>Owner's Name: </label>
-        <input type='text' placeholder="Owner's Name" value={this.state.owner} />
-        <br />
+        <input 
+        name="islandName"
+        value={islandName}
+        onChange={(e) => setIslandName(e.target.value)}
+        type="text" /> <br />
+        <label>Owner Name: </label>
+        <input 
+        name="ownerName"
+        value={ownerName}
+        onChange={(e) => setOwnerName(e.target.value)}
+        type="text" /> <br />
         <input type="submit" />
       </form>
-    )
-  }
-
-
+    </div>
+  )
 }
 
-export default connect(null, {addIsland})(IslandInput);
+export default IslandInput;
