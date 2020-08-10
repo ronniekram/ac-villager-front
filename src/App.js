@@ -1,19 +1,21 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './App.css';
-import Navbar from './components/Navbar';
-import IslandsContainer from './containers/IslandsContainer';
-import VillagersContainer from './containers/VillagersContainer';
 import Header from './Header';
+import IslandsContainer from './containers/IslandsContainer';
+// import VillagersContainer from './containers/VillagersContainer';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Navbar />
-      <IslandsContainer />
-      <VillagersContainer />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <IslandsContainer />
+        {/* <VillagersContainer /> */}
+      </div>
+    )
+  }
 }
+
 
 export default App;

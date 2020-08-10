@@ -4,12 +4,13 @@ import {fetchVillager} from '/Users/HotRonnie/Desktop/ac-villagers-react/village
 
 class VillagerSearch extends React.Component {
   state = {
-    query: ""
+    query: '',
+    villager: []
   }
 
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      query: event.target.value
     })
   }
 
@@ -17,7 +18,7 @@ class VillagerSearch extends React.Component {
     event.preventDefault();
     this.props.fetchVillager(this.state);
     this.setState({
-      query:''
+      query: ''
     })
   }
 
@@ -25,7 +26,7 @@ class VillagerSearch extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="query" value={this.state.query} onChange={this.handleChange} />
+          <input type="text" value={this.state.query} onChange={this.handleChange} />
           <input type="submit" />
         </form>
       </div>

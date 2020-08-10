@@ -1,3 +1,5 @@
+// import cuid from 'cuid';
+// export const cuidFn = cuid
 
 const islandReducer = (state = {islands: [], loading: false}, action) => {
   switch(action.type) {

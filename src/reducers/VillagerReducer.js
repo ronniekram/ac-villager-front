@@ -1,16 +1,16 @@
 
 const villagerReducer = (state = { villagers: [], loading: false }, action) => {
   switch(action.type) {
-    case 'LOADING_VILLAGER':
+    case 'FETCH_VILLAGER':
       return {
-        ...state, 
-        villagers: [...state.villagers],
+        ...state,
+        villager: [...state.villager],
         loading: true
       }
-    case 'SHOW_VILLAGER':
+    case 'VILLAGER_FETCHED':
       return {
-        ...state, 
-        villagers: action.villagers,
+        ...state,
+        villager: action.villager,
         loading: false
       }
     default:

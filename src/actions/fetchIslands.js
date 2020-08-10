@@ -6,6 +6,7 @@ export function fetchIslands() {
     .then(data => dispatch({
       type: 'ISLANDS_FETCHED',
       islands: data
-    }))
+    })
+    )
   }
 }

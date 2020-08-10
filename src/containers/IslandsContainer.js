@@ -1,9 +1,11 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import {Route, Switch} from 'react-router-dom';
 import {fetchIslands} from '../actions/fetchIslands';
-// import Island from '../components/islands/Island';
+import Navbar from '../components/Navbar'
+import Island from '../components/islands/Island';
 import Islands from '../components/islands/Islands';
-// import IslandInput from '../components/islands/IslandInput';
+import IslandInput from '../components/islands/IslandInput';
 
 class IslandsContainer extends React.Component {
 
@@ -11,32 +13,25 @@ class IslandsContainer extends React.Component {
     this.props.fetchIslands()
   }
 
-  // handleLoading = () => {
-  //   console.log(this.props.loading)
-  //   if (this.props.loading) {
-  //     return <div>Loading...</div>
-  //   } else {
-  //     return <Islands islands={this.props.islands} />
-
-  // }
-
   render() {
     return (
       <div>
-        {/* <Island islands={this.props.islands} /> */}
-        <h2>Islands</h2> 
-        <Islands islands={this.props.islands} />
-        {/* <IslandInput />  */}
+        <Navbar />
+        <Switch>
+          <Route path='/islands/new' component={IslandInput} />
+          <Route path='/islands' render={(routerProps) => <Islands {...routerProps} islands={this.props.islands} />} />
+        </Switch>
       </div>
     )
   }
+
+
 }
 
-const mapDispatchToProps = state => {
+const mapStateToProps = state => {
   return {
-    islands: state.islands,
-    // loading: state.loading
+    islands: state.islands
   }
 }
 
-export default connect(mapDispatchToProps, { fetchIslands })(IslandsContainer);
+export default connect(mapStateToProps, {fetchIslands})(IslandsContainer);
