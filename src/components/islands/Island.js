@@ -1,15 +1,16 @@
 import React from 'react';
 // import {Redirect} from 'react-router-dom';
+// import IslandsContainer from '../containers/IslandsContainer';
 
 const Island = (props) => {
   console.log(props)
-  // let island = props.islands && props.islands.filter(island => island.id === props.match.params.id)[0]
-  let island = props.islands && props.islands.map(island => island.id === props.match.params.id)[0]
-  console.log(island)
+  let island = props.islands && props.islands.filter(island => island.id === props.match.params.id)[0]
+  // let island = props.islands && props.islands.map(island => island.id === props.match.params.id)[0]
+  // console.log(island)
   return (
     <div>
-      <h2>{island ? island.name : null}</h2>
-      <h4>Owner: {island ? island.owner :null}</h4>
+      <h2>{island.name}</h2>
+      <h4>Owner: {island.owner}</h4>
       <h5>Villagers:</h5>
       <ul>
         <li>Villager 1</li>

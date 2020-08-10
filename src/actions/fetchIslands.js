@@ -1,10 +1,11 @@
 export function fetchIslands() {
   return (dispatch) => {
+    dispatch({type: 'FETCH_ISLANDS'})
     fetch('http://localhost:3000/islands')
     .then(resp => resp.json())
-    .then(islands => dispatch({
-      type: 'FETCH_ISLANDS',
-      payload: islands
+    .then(data => dispatch({
+      type: 'ISLANDS_FETCHED',
+      islands: data
     }))
   }
 }

@@ -1,8 +1,18 @@
 
-export default function islandReducer(state = { islands: []}, action) {
+const islandReducer = (state = {islands: [], loading: false}, action) => {
   switch(action.type) {
     case 'FETCH_ISLANDS': 
-      return {islands: action.payload}
+      return {
+        ...state, 
+        islands: [...state.islands],
+        loading: true
+      }
+    case 'ISLANDS_FETCHED':
+      return {
+        ...state,
+        islands: action.islands,
+        loading: false
+      }
     case 'ADD_ISLAND':
       return {...state, islands: [...state.islands, action.payload]}
     case 'ADD_VILLAGER': 
@@ -36,3 +46,5 @@ export default function islandReducer(state = { islands: []}, action) {
       return state;
   }
 }
+
+export default islandReducer;
