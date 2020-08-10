@@ -5,7 +5,7 @@ const Island = (props) => {
   console.log(props)
   // let island = props.islands && props.islands.filter(island => island.id === props.match.params.id)[0]
   let island = props.islands && props.islands.map(island => island.id === props.match.params.id)[0]
-  // console.log(island)
+  console.log(island)
   return (
     <div>
       <h2>{island ? island.name : null}</h2>

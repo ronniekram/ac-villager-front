@@ -8,9 +8,9 @@ const Navbar = () => {
         <div className="collapse navbar-collapse"
             id="navcol-1">
             <ul className="nav navbar-nav">
-                <li className="nav-item nav-link" role="presentation">Islands</li>
-                <li className="nav-item nav-link" role="presentation">Add Island</li>
-                <li className="nav-item nav-link" role="presentation">Search Villagers</li>
+              <li className="nav-item" role="presentation"><a className="nav-link active" href="http://localhost:3001">Islands</a></li>
+              <li className="nav-item" role="presentation"><a className="nav-link" href="http://localhost:3001">Add Island</a></li>
+             <li className="nav-item" role="presentation"><a className="nav-link" href="http://localhost:3001">Search Villagers</a></li>
             </ul>
         </div>
       </div>

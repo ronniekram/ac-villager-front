@@ -3,8 +3,10 @@ import React from 'react';
 // import Island from './Island'
 
 const Islands = (props) => {
+  console.log(props)
   return (
     <div>
+      <h1>Islands</h1>
       {props.islands && props.islands.map(island => 
         <li key={island.id}>{island.name}</li>
         )}

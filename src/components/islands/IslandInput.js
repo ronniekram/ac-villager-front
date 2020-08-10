@@ -30,10 +30,10 @@ class IslandInput extends React.Component {
         <h3>Create Island</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Island Name: </label>
-          <input type='text' name="name" value={this.state.name} onChange={this.handleChange}/> 
+          <input type='text' name="name" value={this.state.name} onChange={event => this.handleChange(event)}/> 
             <br />
           <label>Owner's Name: </label>
-          <input type='text' value={this.state.owner} name="owner" onChange={this.handleChange} />
+          <input type='text' value={this.state.owner} name="owner" onChange={event => this.handleChange(event)} />
             <br />
           <input type="submit" />
         </form>
