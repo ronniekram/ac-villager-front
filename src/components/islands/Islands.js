@@ -1,9 +1,14 @@
 import React from 'react';
-// import { Route } from 'react-router-dom'
+// import { Route, Link } from 'react-router-dom'
+import Island from './Island'
 
-const Islands = () => {
+const Islands = (props) => {
   return (
-    <div>Hello, I am islands.</div>
+    <div>
+      {props.islands.map(island => 
+        <li key={island.id}>{island.name}</li>
+        )}
+    </div>
   )
 }
 
