@@ -30,7 +30,7 @@ class IslandsContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    islands: state.islands
+    islands: state.islandReducer.islands
   }
 }
 
