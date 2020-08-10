@@ -3,8 +3,9 @@ import React from 'react';
 
 const Island = (props) => {
   console.log(props)
-  let island = props.islands && props.islands.filter(island => island.id === props.match.params.id)[0]
-  console.log(island)
+  // let island = props.islands && props.islands.filter(island => island.id === props.match.params.id)[0]
+  let island = props.islands && props.islands.map(island => island.id === props.match.params.id)[0]
+  // console.log(island)
   return (
     <div>
       <h2>{island ? island.name : null}</h2>
@@ -13,6 +14,7 @@ const Island = (props) => {
       <ul>
         <li>Villager 1</li>
       </ul>
+      <button>Delete Island?</button>
     </div>
   )
 }
