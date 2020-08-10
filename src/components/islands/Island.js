@@ -1,20 +1,19 @@
 import React from 'react';
-// import {Redirect} from 'react-router-dom';
-// import IslandsContainer from '../containers/IslandsContainer';
+import {Redirect} from 'react-router-dom';
+import VillagersContainer from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/containers/VillagersContainer.js'
+
 
 const Island = (props) => {
   console.log(props)
-  let island = props.islands && props.islands.filter(island => island.id === props.match.params.id)[0]
-  // let island = props.islands && props.islands.map(island => island.id === props.match.params.id)[0]
-  // console.log(island)
+  let island = props.islands.filter(island => island.id === props.match.params.id)[0]
+  console.log(island)
+
   return (
     <div>
-      <h2>{island.name}</h2>
-      <h4>Owner: {island.owner}</h4>
-      <h5>Villagers:</h5>
-      <ul>
-        <li>Villager 1</li>
-      </ul>
+      <h2> {island.name} </h2>
+      <h4>{island.owner}</h4>
+      <p>Villagers: </p>
+        <VillagersContainer island={island} />
       <button>Delete Island?</button>
     </div>
   )
