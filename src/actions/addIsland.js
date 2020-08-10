@@ -9,7 +9,7 @@ export const addIsland = (data) => {
       method: 'POST',
       body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then(resp => resp.json())
     .then(island => dispatch({type: 'ADD_ISLAND', payload: island}))
   }
 }
