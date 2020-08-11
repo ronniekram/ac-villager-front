@@ -1,32 +1,51 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {fetchVillagers} from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/actions/fetchVillagers.js'
+import React, { useEffect, useState } from 'react';
+// import {connect} from 'react-redux';
+// import {fetchVillagers} from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/actions/fetchVillagers.js'
 
-function VillagerSearch({villagers}) {
-  state = {
-    query: '',
-  }
+// class VillagerSearch extends React.Component {
+//   state = {
+//     query: '',
+//   }
 
-  handleChange = event => {
-    this.setState({
-      query: event.target.value
-    })
-  }
+//   handleChange = event => {
+//     this.setState({
+//       query: event.target.value
+//     })
+//   }
+//     render() {
+//     return (
+//       <div>
+//         <input type="text" className="searchbox" placeholder="Search villagers by name..." onChange={(event) => this.handleChange(event)}/>
+//     <p>{this.state.query}</p>
+//       </div>
+//     )
+//     }
+//   }
+ function VillagerSearch({villagers}) {
+   const [searchTerm, setSearch] = React.useState("")
+   const [searchResults, setResults] = React.useState([])
+   const handleChange = event => {
+     setSearch(event.target.value);
+    };
 
-  render() {
-    const searchResults = villagers.filter((request) => {
-      if (this.state.query == null) {
-        return (<div> This villager doesn't exist. </div>)
-      } else if (request.name.toLowerCase().includes(this.state.query.toLowerCase())) {
-        
-      }
-    })
+    React.useEffect(() => {
+      const results = villagers.filter(villager => 
+          villager.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setResults(results);
+    }, [searchTerm]);
+
+
     return (
-      <div>
-        <input type="text" className="searchbox" placeholder="Search villagers by name..." onChange={(event) => this.handleChange(event)}/>
+      <div className="searchbar">
+        <input type="text" placeholder="Search villager by name..." value={searchTerm} onChange={handleChange} />
+
+        <ul>
+          {searchResults.map(villager => (
+            <li>{villager.name}</li>
+          ))}
+        </ul>
       </div>
     )
-  }
-}
-
-export default connect(null, {fetchVillagers})(VillagerSearch);
+ }
+export default VillagerSearch;
