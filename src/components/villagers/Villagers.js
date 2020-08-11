@@ -1,9 +1,13 @@
 import React from 'react';
-// import { Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const Villagers = () => {
+function Villagers({villagers}) {
+  const list = villagers.map(villager =>
+    <li key={villager.id}> <Link to={`villagers/${villager.id}`}> {villager.name} </Link> </li>)
   return (
-    <div>Hello, I am villagers.</div>
+    <ul>
+      {list}
+    </ul>
   )
 }
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchVillager} from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/actions/fetchVillager.js'
+import {fetchVillagers} from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/actions/fetchVillagers.js'
 
-class VillagerSearch extends React.Component {
+function VillagerSearch({villagers}) {
   state = {
     query: '',
-    villager: []
   }
 
   handleChange = event => {
@@ -14,24 +13,20 @@ class VillagerSearch extends React.Component {
     })
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.fetchVillager(this.state);
-    this.setState({
-      query: ''
-    })
-  }
-
   render() {
+    const searchResults = villagers.filter((request) => {
+      if (this.state.query == null) {
+        return (<div> This villager doesn't exist. </div>)
+      } else if (request.name.toLowerCase().includes(this.state.query.toLowerCase())) {
+        
+      }
+    })
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.query} onChange={this.handleChange} />
-          <input type="submit" />
-        </form>
+        <input type="text" className="searchbox" placeholder="Search villagers by name..." onChange={(event) => this.handleChange(event)}/>
       </div>
     )
   }
 }
 
-export default connect(null, {fetchVillager})(VillagerSearch);
+export default connect(null, {fetchVillagers})(VillagerSearch);

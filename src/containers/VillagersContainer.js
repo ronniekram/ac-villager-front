@@ -1,16 +1,29 @@
 import React from 'react';
-import Villager from '../components/villagers/Villager';
+import { connect } from 'react-redux';
+import {Route, Switch} from 'react-router-dom';
+import {fetchVillagers} from '../actions/fetchVillagers';
 import Villagers from '../components/villagers/Villagers';
-import VillagerSearch from '../components/villagers/VillagerSearch';
 
-const VillagersContainer = () => {
-  return (
-    <div>
-      <Villager />
-      <Villagers />
-      <VillagerSearch />
-    </div>
-  )
-} 
+class VillagersContainer extends React.Component {
+  componentDidMount() {
+    this.props.fetchVillagers()
+  }
 
-export default VillagersContainer;
+  render() {
+    return (
+      <div>
+        <Switch>
+        <Route path='/villagers' render={(routerProps) => <Villagers {...routerProps} villagers={this.props.villagers} />} />
+        </Switch>
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    villagers: state.villagerReducer.villagers
+  }
+}
+
+export default connect(mapStateToProps, {fetchVillagers})(VillagersContainer);

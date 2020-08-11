@@ -44,32 +44,3 @@ class IslandInput extends React.Component {
 }
 
 export default connect(null, {addIsland})(IslandInput);
-
-// import React, { useState } from 'react';
-
-// function IslandInput() {
-//   const [islandName, setIslandName] = useState("");
-//   const [ownerName, setOwnerName] = useState("");
-
-//   return (
-//     <div>
-//       <form>
-//         <label>Island Name: </label>
-//         <input 
-//         name="islandName"
-//         value={islandName}
-//         onChange={(e) => setIslandName(e.target.value)}
-//         type="text" /> <br />
-//         <label>Owner Name: </label>
-//         <input 
-//         name="ownerName"
-//         value={ownerName}
-//         onChange={(e) => setOwnerName(e.target.value)}
-//         type="text" /> <br />
-//         <input type="submit" />
-//       </form>
-//     </div>
-//   )
-// }
-
-// export default IslandInput;

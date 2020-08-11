@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {fetchIslands} from '../actions/fetchIslands';
 import Navbar from '../components/Navbar'
-// import Island from '../components/islands/Island';
 import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';
 
