@@ -19,12 +19,12 @@ class IslandInput extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addIsland(this.state);
+    this.props.history.push(`/islands`)
     this.setState({
       name: '',
       owner: '',
       villager_ids: []
     })
-    this.props.history.push('/islands')
   }
 
   render() {
@@ -39,7 +39,7 @@ class IslandInput extends React.Component {
           <input type='text' value={this.state.owner} name="owner" onChange={event => this.handleChange(event)} />
             <br />
             <label>Villager: </label>
-            <input type="text" name="villager_ids" value={this.state.villagers} onChange={event => this.handleChange(event)} /> 
+            <input type="number" name="villager_ids" value={this.state.villagers} onChange={event => this.handleChange(event)} /> 
             <br />
           <input type="submit" />
         </form>
