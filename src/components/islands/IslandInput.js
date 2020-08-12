@@ -22,6 +22,8 @@ class IslandInput extends React.Component {
       name: '',
       owner: ''
     })
+    this.props.history.push('/islands')
+
   }
 
   render() {

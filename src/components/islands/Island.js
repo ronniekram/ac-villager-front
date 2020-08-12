@@ -1,5 +1,5 @@
 import React from 'react';
-// import VillagersContainer from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/containers/VillagersContainer.js'
+// import VillagersContainer from '../../containers/VillagersContainer';
 
 
 const Island = (props) => {
@@ -11,7 +11,6 @@ const Island = (props) => {
       <h2> {island && island.name} </h2>
       <h4>Owner: {island && island.owner}</h4>
       <p>Villagers: </p>
-        {/* <VillagersContainer island={island} /> */}
         list of villagers <br />
       <button>Delete Island?</button>
     </div>

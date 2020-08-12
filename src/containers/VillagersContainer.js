@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {fetchVillagers} from '../actions/fetchVillagers';
-import Villagers from '../components/villagers/Villagers';
+import Villager from '../components/villagers/Villager';
+// import Villagers from '../components/villagers/Villagers';
 import VillagerSearch from '../components/villagers/VillagerSearch';
 
 class VillagersContainer extends React.Component {
@@ -14,7 +15,8 @@ class VillagersContainer extends React.Component {
     return (
       <div>
         <Switch>
-        <Route path='/villagers' render={(routerProps) => <Villagers {...routerProps} villagers={this.props.villagers} />} />
+        <Route exact path='/villagers/:id' render={(routerProps) => <Villager {...routerProps} villagers={this.props.villagers}/>}/>
+        {/* <Route path='/villagers' render={(routerProps) => <Villagers {...routerProps} villagers={this.props.villagers} />} /> */}
         </Switch>
         <VillagerSearch villagers={this.props.villagers} />
       </div>
