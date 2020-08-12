@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
-import {fetchVillagers} from '../actions/fetchVillagers';
+import {fetchVillagers} from '../actions/villagerActions';
 import Villager from '../components/villagers/Villager';
-// import Villagers from '../components/villagers/Villagers';
 import VillagerSearch from '../components/villagers/VillagerSearch';
 
 class VillagersContainer extends React.Component {

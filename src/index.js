@@ -11,6 +11,7 @@ import rootReducer from './reducers/index'
 
 let store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>
@@ -18,3 +19,4 @@ ReactDOM.render(
     </Router>
   </Provider>,
   document.getElementById('root'));
+

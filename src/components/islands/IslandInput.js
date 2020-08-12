@@ -6,7 +6,8 @@ import {addIsland} from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-fr
 class IslandInput extends React.Component {
   state = {
     name: '',
-    owner: ''
+    owner: '',
+    villager_ids: [],
   }
 
   handleChange = (event) => {
@@ -24,7 +25,6 @@ class IslandInput extends React.Component {
       villager_ids: []
     })
     this.props.history.push('/islands')
-
   }
 
   render() {
