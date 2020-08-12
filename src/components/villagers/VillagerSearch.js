@@ -15,12 +15,22 @@ class VillagerSearch extends React.Component {
   searchResults = () => {
     return this.props.villagers.filter(villager => villager.name.toLowerCase().includes(this.state.query.toLowerCase()))
   }
+
+    displayResults = () => {
+      if (this.state.query === '') {
+        return <div></div>
+      } else {
+        return <Villagers villagers={this.searchResults()} />
+      }
+    }
+    
   render() {
     return (
       <div className="searchbar">
         <input type="text" placeholder="Search villager by name..." value={this.state.query} onChange={this.handleChange} />
 
-        <Villagers villagers={this.searchResults()} />
+        {this.displayResults()}
+
       </div>
     )
   }
