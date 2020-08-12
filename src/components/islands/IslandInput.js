@@ -20,7 +20,8 @@ class IslandInput extends React.Component {
     this.props.addIsland(this.state);
     this.setState({
       name: '',
-      owner: ''
+      owner: '',
+      villager_ids: []
     })
     this.props.history.push('/islands')
 
@@ -36,6 +37,9 @@ class IslandInput extends React.Component {
             <br />
           <label>Owner's Name: </label>
           <input type='text' value={this.state.owner} name="owner" onChange={event => this.handleChange(event)} />
+            <br />
+            <label>Villager: </label>
+            <input type="text" name="villager_ids" value={this.state.villagers} onChange={event => this.handleChange(event)} /> 
             <br />
           <input type="submit" />
         </form>
