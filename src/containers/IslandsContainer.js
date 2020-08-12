@@ -19,13 +19,12 @@ class IslandsContainer extends React.Component {
         <Navbar />
         <Switch>
           <Route path='/islands/new' 
-            component={IslandInput} addIsland={addIsland}/>
+            component={IslandInput} addIsland={addIsland} />
 
           <Route exact path='/islands/:id'
             render={(routerProps) => 
               <Island {...routerProps} 
-                islands={this.props.islands} 
-                deleteIsland={this.props.deleteIsland}/>}/>
+                islands={this.props.islands} />}/>
 
           <Route path='/islands' 
             render={(routerProps) => 

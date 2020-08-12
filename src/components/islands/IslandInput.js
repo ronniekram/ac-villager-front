@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {addIsland} from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/actions/addIsland.js'
+import {addIsland} from '../../actions/islandActions'
 
 
 class IslandInput extends React.Component {
