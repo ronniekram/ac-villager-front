@@ -18,7 +18,7 @@ class IslandsContainer extends React.Component {
       <div>
         <Navbar />
         <Switch>
-          <Route exact path='/islands' render={(routerProps) => <Island {...routerProps} islands={this.props.islands}/>}/>
+          <Route exact path='/islands/:id' render={(routerProps) => <Island {...routerProps} islands={this.props.islands}/>}/>
           <Route path='/islands/new' component={IslandInput} />
           <Route path='/islands' render={(routerProps) => <Islands {...routerProps} islands={this.props.islands} />} />
         </Switch>
