@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {fetchIslands, addIsland, deleteIsland} from '../actions/islandActions';
+import {fetchVillagers} from '../actions/villagerActions'
 import Navbar from '../components/Navbar'
 import Island from '../components/islands/Island'
 import Islands from '../components/islands/Islands';
@@ -11,6 +12,7 @@ class IslandsContainer extends React.Component {
 
   componentDidMount() {
     this.props.fetchIslands()
+    this.props.fetchVillagers()
   }
 
   render() {
@@ -44,4 +46,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchIslands, addIsland, deleteIsland})(IslandsContainer);
+export default connect(mapStateToProps, {fetchIslands, addIsland, deleteIsland, fetchVillagers})(IslandsContainer);
