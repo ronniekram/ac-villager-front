@@ -13,7 +13,7 @@ const Island = (props) => {
       <h4>Owner: {island && island.owner}</h4>
       <p>Villagers: </p>
       <Villagers villagers={village} />
-      <button>Delete Island?</button>
+      <button onClick={props.deleteIsland(island && island.id)}>Delete Island?</button>
     </div>
   )
 }
