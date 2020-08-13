@@ -27,11 +27,6 @@ class IslandsContainer extends React.Component {
               <Island {...routerProps} 
                 islands={this.props.islands} />}/>
 
-          {/* <Route exact path='/islands/:id/villagers/:id' 
-            render={(routerProps) => 
-            <Villager {...routerProps} 
-              villagers={this.props.islands.villagers} />}/> */}
-
           <Route path='/islands' 
             render={(routerProps) => 
               <Islands {...routerProps} 

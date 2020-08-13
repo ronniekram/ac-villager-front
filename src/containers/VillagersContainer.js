@@ -13,7 +13,7 @@ class VillagersContainer extends React.Component {
     return (
       <>
         <Switch>
-        <Route exact path='/villagers/:id' render={(routerProps) => <Villager {...routerProps} villagers={this.props.villagers}/>}/>
+        <Route path='/villagers/:id' render={(routerProps) => <Villager {...routerProps} villagers={this.props.villagers}/>}/>
         </Switch>
       </>
     )

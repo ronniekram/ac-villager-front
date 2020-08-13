@@ -1,15 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux'
-// import {Route, Switch} from 'react-router-dom';
 import {deleteWishlist} from '../../actions/wishlistActions'
 import Villagers from '../villagers/Villagers'
-// import Villager from '../villagers/Villager'
 
 class Wishlist extends React.Component {
   state = {}
   
-  handleDelete = (event) => {
-    this.props.deleteWishlist(event)
+  handleDelete = (wishlist) => {
+    this.props.deleteWishlist(wishlist)
     this.props.history.push('/wishlists')
   }
 
@@ -24,7 +22,7 @@ class Wishlist extends React.Component {
           <h4>Owner: {wishlist && wishlist.owner}</h4>
           <p>Villagers: </p>
             <Villagers villagers={village} />
-        <button onClick={event => this.handleDelete(event)}>Delete Wishlist?</button>
+        <button onClick={() => this.handleDelete(wishlist.id)}>Delete Wishlist?</button>
     </>
     )
   }

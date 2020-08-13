@@ -27,10 +27,6 @@ class WishlistContainer extends React.Component {
               <Wishlist {...routerProps} 
                 wishlists={this.props.wishlists} />}/>
 
-          {/* <Route exact path='/wishlists/:id/villagers/:id' 
-            render={(routerProps) => 
-            <Villager {...routerProps} 
-              villagers={this.props.wishlists.villagers} />}/> */}
 
           <Route path='/wishlists' 
             render={(routerProps) => 

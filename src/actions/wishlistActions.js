@@ -28,7 +28,7 @@ export const addWishlist = (data) => {
 
 export const deleteWishlist = (wishlistId) => {
   return (dispatch) => {
-    return fetch(`http://localhost:3000/islands/${wishlistId}`, {
+    return fetch(`http://localhost:3000/wishlists/${wishlistId}`, {
       method: 'DELETE'
     })
     .then(wishlist => dispatch({type: 'DELETE_WISHLIST', payload: wishlist}))
