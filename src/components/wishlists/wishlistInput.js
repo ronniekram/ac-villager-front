@@ -46,3 +46,53 @@ class wishlistInput extends React.Component {
 }
 
 export default connect(null, {addWishlist})(wishlistInput);
+
+// import React, { useState } from 'react';
+// import {connect} from 'react-redux'
+// import {addWishlist} from '../../actions/wishlistActions'
+
+
+// function wishlistInput({history, match, wishlists, addWishlist}) {
+
+//   const [name, setName] = useState('');
+//   const [owner, setOwner] = useState('');
+//   const [villager_ids, setVillagerIds] = useState([]);
+
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     addWishlist({
+//       name: name,
+//       owner: owner,
+//       villager_ids: villager_ids
+//     })
+//     this.props.history.push(`/wishlists`)
+//   }
+
+//     return (
+//       <>
+//         <h3>Create Wishlist</h3>
+//         <form onSubmit={handleSubmit}>
+//           <label>Wishlist Name: </label>
+//           <input type='text' name="name" value={name} onChange={(e) => setName(e.target.value)} /> 
+//             <br />
+//           <label>Owner's Name: </label>
+//           <input type='text' value={owner} name="owner" onChange={(e) => setOwner(e.target.value)} />
+//             <br />
+//             <label>Villager: </label>
+//             <input type="number" name="villager_ids" value={villager_ids} onChange={(e) => setVillagerIds(e.target.value)} /> 
+//             <br />
+//           <input type="submit" />
+//         </form>
+//       </>
+//     )
+//   }
+
+//   const mapStateToProps = state => {
+//     return {
+//       wishlists: state.wishlistReducer.wishlists
+//     }
+//   }
+
+
+// export default connect(mapStateToProps, {addWishlist})(wishlistInput);

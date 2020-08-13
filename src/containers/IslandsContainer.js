@@ -46,3 +46,49 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchIslands, addIsland, deleteIsland, fetchVillagers})(IslandsContainer);
+
+
+// import React, { useEffect } from 'react';
+// import { connect } from 'react-redux';
+// import {Route, Switch} from 'react-router-dom';
+// import {fetchIslands} from '../actions/islandActions';
+// import {fetchVillagers} from '../actions/villagerActions'
+// import Island from '../components/islands/Island'
+// import Islands from '../components/islands/Islands';
+// import IslandInput from '../components/islands/IslandInput';
+
+
+// function IslandsContainer({history, match, fetchIslands, fetchVillagers}) {
+//   useEffect(() => {
+//     fetchIslands(),
+//     fetchVillagers();
+//   }, [islands, villagers])
+
+//     return (
+//       <>
+//         <Switch>
+//           <Route path={`${match.url}/new`} 
+//             render={(routerProps) => 
+//             <IslandInput {...routerProps}/>} />
+
+//           <Route exact path={`${match.url}/:id`}
+//             render={(routerProps) => 
+//               <Island {...routerProps} 
+//                 islands={islands} />}/>
+
+//           <Route path={`${match.url}`} 
+//             render={(routerProps) => 
+//               <Islands {...routerProps} 
+//                 islands={islands} />} />
+//         </Switch>
+//       </>
+//     )
+//   }
+
+// const mapStateToProps = state => {
+//   return {
+//     islands: state.islandReducer.islands
+//   }
+// }
+
+// export default connect(mapStateToProps, {fetchIslands, fetchVillagers})(IslandsContainer);

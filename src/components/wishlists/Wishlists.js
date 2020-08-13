@@ -19,3 +19,23 @@ const Wishlists = (props) => {
 }
 
 export default Wishlists;
+
+
+// function Wishlists({villagers}) => {
+//   const list = wishlists.map(wishlist => 
+//     <li key={wishlist.id}> 
+//       <Link to={`/wishlists/${wishlist.id}`}> {wishlist.name}</Link>
+//     </li>
+//   )
+
+//   return (
+//     <>
+//       <h3>Wishlists</h3>
+//         <ul>
+//           {list}
+//         </ul>
+//     </>
+//   )
+// }
+
+// export default Wishlists;
