@@ -1,10 +1,13 @@
 import React from 'react';
+// import VillagerSearch from './VillagerSearch'
 
 function Villager({match, villagers}) {
-  const villager = villagers.find(villager => 
+  const villager = villagers && villagers.find(villager => 
     villager.id == match.params.id)
+    console.log(villager)
 
   return (
+    <>
     <div className="card">
       <div><img src={ villager && villager.image} alt={villager && villager.name} /></div>
         <div className="container">
@@ -14,8 +17,8 @@ function Villager({match, villagers}) {
           <p>Species: {villager && villager.species} </p>
           <p>Birthday: {villager && villager.birthday} </p>
         </div>
-
     </div>
+    </>
   )
 }
 

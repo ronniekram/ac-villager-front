@@ -6,18 +6,19 @@ import Navbar from './components/Navbar'
 import Header from './Header'
 import IslandsContainer from './containers/IslandsContainer';
 import WishlistsContainer from './containers/wishlistContainer';
+import Villager from './components/villagers/Villagers';
 import {fetchWishlists} from './actions/wishlistActions';
 import {fetchIslands} from './actions/islandActions';
 import {fetchVillagers} from './actions/villagerActions';
 
 
-function App({fetchIslands, fetchWishlists, fetchVillagers}) {
+function App({fetchIslands, fetchWishlists, fetchVillagers, villagers}) {
 
   useEffect(() => {
     fetchIslands();
     fetchVillagers();
     fetchWishlists();
-  },[])
+  },[fetchIslands, fetchVillagers, fetchWishlists])
 
     return (
       <div className="App">
@@ -26,6 +27,7 @@ function App({fetchIslands, fetchWishlists, fetchVillagers}) {
           <Route exact path="/" render={() => <Header />} />
           <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
           <Route path="/wishlists" render={(routerProps) => <WishlistsContainer {...routerProps} /> } />
+          <Route path="/villagers" render={(routerProps) => <Villager {...routerProps} villagers={villagers}/>} />
       </div>
     )
   }

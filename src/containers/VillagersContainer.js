@@ -2,20 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {fetchVillagers} from '../actions/villagerActions';
-import Villager from '../components/villagers/Villager';
-import VillagerSearch from '../components/villagers/VillagerSearch'
+import Villagers from '../components/villagers/Villagers';
 
 
-function VillagersContainer({history, match, villagers}) {
+function VillagersContainer({match, villagers}) {
 
     return (
-      <>
-        <Switch>
-        <Route path={`villagers/:id`} render={(routerProps) => <Villager {...routerProps} villagers={villagers}/>}/>
-        </Switch>
-        <VillagerSearch villagers={villagers} />
-        <Villager villagers={villagers} />
-      </>
+      null
     )
   }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import {deleteIsland} from '../../actions/islandActions'
 import Villagers from '../villagers/Villagers'
+import VillagerSearch from './VillagerSearch'
 
 function Island({history, match, islands, deleteIsland}) {
   
@@ -20,6 +21,9 @@ function Island({history, match, islands, deleteIsland}) {
           <p>Villagers: </p>
             <Villagers villagers={village} />
         <button onClick={() => handleDelete(island.id)}>Delete Wishlist?</button>
+        <div className="search-div">
+          <VillagerSearch />
+        </div>
     </>
     )
   }

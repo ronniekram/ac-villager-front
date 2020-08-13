@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {addIsland} from '../../actions/islandActions';
 
 
-function IslandInput({history, match, islands, addIsland}) {
+function IslandInput({history, addIsland}) {
 
   const [name, setName] = useState('');
   const [owner, setOwner] = useState('');

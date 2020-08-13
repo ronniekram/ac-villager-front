@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
-import {fetchWishlists} from '../actions/wishlistActions';
 import Wishlist from '../components/wishlists/Wishlist'
 import Wishlists from '../components/wishlists/Wishlists'
 import WishlistInput from '../components/wishlists/wishlistInput';
@@ -12,15 +11,15 @@ function WishlistContainer({match, wishlists}) {
       <>
   <Switch>
 
-    <Route exact path={`${match.url}`} render={(routerProps) => <Wishlists {...routerProps} wishlists={wishlists} />} />
+    <Route exact path={`/wishlists`} render={(routerProps) => <Wishlists {...routerProps} wishlists={wishlists} />} />
 
-    <Route path={`${match.url}/new`} 
+    <Route path={`/wishlists/new`} 
     render={(routerProps) => 
     <WishlistInput {...routerProps}/>} />
 
-    <Route exact path={`${match.url}/:id`}
+    <Route exact path={`/wishlists/:id`}
     render={(routerProps) => 
-      <Wishlists {...routerProps} 
+      <Wishlist {...routerProps} 
       wishlists={wishlists} />}/>
 
   </Switch>
@@ -30,8 +29,9 @@ function WishlistContainer({match, wishlists}) {
 
 const mapStateToProps = state => {
   return {
-    wishlists: state.wishlistReducer.wishlists
+    wishlists: state.wishlistReducer.wishlists,
+    villagers: state.villagerReducer.villagers
   }
 }
 
-export default connect(mapStateToProps, {fetchWishlists})(WishlistContainer);
+export default connect(mapStateToProps)(WishlistContainer);
