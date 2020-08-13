@@ -1,4 +1,4 @@
-const islandReducer = (state = {wishlists: [], loading: false}, action) => {
+const wishlistReducer = (state = {wishlists: [], loading: false}, action) => {
   switch(action.type) {
     case 'FETCH_WISHLISTS': 
       return {
@@ -40,4 +40,4 @@ const islandReducer = (state = {wishlists: [], loading: false}, action) => {
   }
 }
 
-export default islandReducer;
+export default wishlistReducer;

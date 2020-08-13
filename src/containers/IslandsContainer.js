@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 import Island from '../components/islands/Island'
 import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';
+// import Villager from '../components/villagers/Villager'
 
 class IslandsContainer extends React.Component {
 
@@ -27,6 +28,11 @@ class IslandsContainer extends React.Component {
             render={(routerProps) => 
               <Island {...routerProps} 
                 islands={this.props.islands} />}/>
+
+          {/* <Route exact path='/islands/:id/villagers/:id' 
+            render={(routerProps) => 
+            <Villager {...routerProps} 
+              villagers={this.props.islands.villagers} />}/> */}
 
           <Route path='/islands' 
             render={(routerProps) => 

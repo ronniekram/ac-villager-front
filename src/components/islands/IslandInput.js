@@ -20,11 +20,6 @@ class IslandInput extends React.Component {
     event.preventDefault();
     this.props.addIsland(this.state);
     this.props.history.push(`/islands`)
-    this.setState({
-      name: '',
-      owner: '',
-      villager_ids: []
-    })
   }
 
   render() {
