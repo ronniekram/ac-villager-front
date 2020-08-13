@@ -6,7 +6,7 @@ import Wishlist from '../components/wishlists/Wishlist'
 import Wishlists from '../components/wishlists/Wishlists'
 import WishlistInput from '../components/wishlists/wishlistInput';
 
-function WishlistContainer({history, match, wishlists}) {
+function WishlistContainer({match, wishlists}) {
 
     return (
       <>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import VillagersContainer from '../../containers/VillagersContainer'
 
 function Islands({islands}) {
   const list = islands.map(island => 
@@ -13,7 +14,8 @@ function Islands({islands}) {
       <h3>Islands</h3>
         <ul>
           {list}
-        </ul>
+        </ul>  
+      <VillagersContainer /> 
     </>
   )
 }

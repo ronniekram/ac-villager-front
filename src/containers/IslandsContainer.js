@@ -5,10 +5,9 @@ import {fetchIslands} from '../actions/islandActions';
 import Island from '../components/islands/Island'
 import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';
-import Villagers from '../components/villagers/Villagers'
 
 
-function IslandsContainer({history, match, islands, villagers}) {
+function IslandsContainer({match, islands, villagers}) {
 
     return (
       <>
@@ -24,8 +23,6 @@ function IslandsContainer({history, match, islands, villagers}) {
             render={(routerProps) => 
               <Island {...routerProps} 
                 islands={islands} />}/>
-          <Route path={`${match.url}/islands/:id`} render={(routerProps) => <Villagers {...routerProps} villagers={villagers}/>} />
-
         </Switch>
       </>
     )

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import VillagersContainer from '../../containers/VillagersContainer'
+// import VillagersContainer from '../../containers/VillagersContainer'
 
 
 function Villagers({match, villagers}) {
@@ -11,7 +11,6 @@ function Villagers({match, villagers}) {
     <ul>
       {list}
     </ul>
-    <div> <VillagersContainer villagers={villagers} /></div>
     </>
   )
 }

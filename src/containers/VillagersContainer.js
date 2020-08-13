@@ -11,9 +11,10 @@ function VillagersContainer({history, match, villagers}) {
     return (
       <>
         <Switch>
-        <Route path={`/villagers/:id`} render={(routerProps) => <Villager {...routerProps} villagers={villagers}/>}/>
+        <Route path={`/:id`} render={(routerProps) => <Villager {...routerProps} villagers={villagers}/>}/>
         </Switch>
-        <VillagerSearch villagers={villagers}/>
+        <VillagerSearch villagers={villagers} />
+        <Villager villagers={villagers} />
       </>
     )
   }
