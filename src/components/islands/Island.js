@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import {deleteIsland} from '../../actions/islandActions'
 import Villagers from '../villagers/Villagers'
-import VillagerSearch from './VillagerSearch'
+import VillagerSearch from '../villagers/VillagerSearch'
 
 function Island({history, match, islands, deleteIsland}) {
   

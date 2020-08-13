@@ -29,8 +29,7 @@ function WishlistContainer({match, wishlists}) {
 
 const mapStateToProps = state => {
   return {
-    wishlists: state.wishlistReducer.wishlists,
-    villagers: state.villagerReducer.villagers
+    wishlists: state.wishlistReducer.wishlists
   }
 }
 

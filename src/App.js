@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import Header from './Header'
 import IslandsContainer from './containers/IslandsContainer';
 import WishlistsContainer from './containers/wishlistContainer';
-import Villager from './components/villagers/Villagers';
+import VillagersContainer from './containers/VillagersContainer';
 import {fetchWishlists} from './actions/wishlistActions';
 import {fetchIslands} from './actions/islandActions';
 import {fetchVillagers} from './actions/villagerActions';
@@ -27,7 +27,7 @@ function App({fetchIslands, fetchWishlists, fetchVillagers, villagers}) {
           <Route exact path="/" render={() => <Header />} />
           <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
           <Route path="/wishlists" render={(routerProps) => <WishlistsContainer {...routerProps} /> } />
-          <Route path="/villagers" render={(routerProps) => <Villager {...routerProps} villagers={villagers}/>} />
+          <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
       </div>
     )
   }

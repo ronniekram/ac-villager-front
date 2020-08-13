@@ -1,14 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
-import {fetchVillagers} from '../actions/villagerActions';
-import Villagers from '../components/villagers/Villagers';
+import Villagers from '../components/villagers/Villagers'
+import Villager from '../components/villagers/Villager'
 
 
 function VillagersContainer({match, villagers}) {
 
     return (
-      null
+      <Switch>
+        <Route exact path="/villagers" render={(routerProps) => <Villagers {...routerProps} villagers={villagers} />} />
+        <Route exact path={`/villagers/:id`}
+            render={(routerProps) => 
+              <Villager {...routerProps} 
+                villagers={villagers} />}/>
+      </Switch>
     )
   }
 
@@ -18,4 +24,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchVillagers})(VillagersContainer);
+export default connect(mapStateToProps)(VillagersContainer);

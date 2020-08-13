@@ -21,7 +21,6 @@ import Villagers from './Villagers';
         <input type="text" placeholder="Search villager by name..." value={query} onChange={(e) => setQuery(e.target.value)} />
 
         {displayResults()}
-
       </div>
     )
   }

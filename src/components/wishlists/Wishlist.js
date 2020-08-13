@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import {deleteWishlist} from '../../actions/wishlistActions'
 import Villagers from '../villagers/Villagers'
-import VillagerSearch from './VillagerSearch'
+import VillagerSearch from '../villagers/VillagerSearch'
 
 function Wishlist({history, match, wishlists, deleteWishlist}) {
   

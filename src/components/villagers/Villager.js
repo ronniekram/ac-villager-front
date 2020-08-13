@@ -4,7 +4,6 @@ import React from 'react';
 function Villager({match, villagers}) {
   const villager = villagers && villagers.find(villager => 
     villager.id == match.params.id)
-    console.log(villager)
 
   return (
     <>

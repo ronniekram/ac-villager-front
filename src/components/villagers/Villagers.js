@@ -5,7 +5,7 @@ import Villager from './Villager'
 function Villagers({villagers}) {
   
   const list = villagers && villagers.map(villager =>
-    <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> </li>)
+    <li key={villager.id}> <Link to={`/villagers/${villager.id}`}> {villager.name} </Link> </li>)
   return (
     <>
     <Route path="/villagers/:id" render={(routerProps) => <Villager {...routerProps} villagers={villagers} />} />
