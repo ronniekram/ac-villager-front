@@ -2,8 +2,8 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className="row">
-      <div className="col"><img src={ require('/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/Animal-Crossing-3.jpg') } width="100%" alt="Animal Crossing Villagers" className="header"/></div>
+    <div className="row"> 
+    <h2> This is where information about the App will go!!!!!! </h2>
     </div>
   )
 }

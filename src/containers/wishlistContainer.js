@@ -10,21 +10,20 @@ function WishlistContainer({history, match, wishlists}) {
 
     return (
       <>
-        <Switch>
-          <Route path={`/wishlists/new`} 
-            render={(routerProps) => 
-            <WishlistInput {...routerProps}/>} />
+  <Switch>
 
-          <Route exact path={`/wishlists/:id`}
-            render={(routerProps) => 
-              <Wishlist {...routerProps} 
-                wishlists={wishlists} />}/>
+    <Route exact path={`${match.url}`} render={(routerProps) => <Wishlists {...routerProps} wishlists={wishlists} />} />
 
-          <Route path={`/wishlists`} 
-            render={(routerProps) => 
-              <Wishlists {...routerProps} 
-              wishlists={wishlists} />} />
-        </Switch>
+    <Route path={`${match.url}/new`} 
+    render={(routerProps) => 
+    <WishlistInput {...routerProps}/>} />
+
+    <Route exact path={`${match.url}/:id`}
+    render={(routerProps) => 
+      <Wishlists {...routerProps} 
+      wishlists={wishlists} />}/>
+
+  </Switch>
       </>
     )
   }
