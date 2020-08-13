@@ -22,7 +22,7 @@ import {Link} from 'react-router-dom';
 
 
 function Wishlists({wishlists}) {
-  const list = wishlists.map(wishlist => 
+  const list = wishlists && wishlists.map(wishlist => 
     <li key={wishlist.id}> 
       <Link to={`/wishlists/${wishlist.id}`}> {wishlist.name}</Link>
     </li>

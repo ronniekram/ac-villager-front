@@ -9,12 +9,13 @@ import {fetchWishlists} from './actions/wishlistActions';
 import {fetchIslands} from './actions/islandActions';
 import {fetchVillagers} from './actions/villagerActions';
 
+
 function App({fetchIslands, fetchWishlists, fetchVillagers}) {
 
   useEffect(() => {
-    fetchIslands()
-    fetchVillagers()
-    fetchWishlists()
+    fetchIslands();
+    fetchVillagers();
+    fetchWishlists();
   },[fetchIslands, fetchVillagers, fetchWishlists])
 
     return (
@@ -28,4 +29,12 @@ function App({fetchIslands, fetchWishlists, fetchVillagers}) {
     )
   }
 
-export default connect(null, {fetchIslands, fetchWishlists, fetchVillagers})(App);
+  const mapStateToProps = state => {
+    return {
+      islands: state.islandReducer.islands,
+      villagers: state.villagerReducer.villagers,
+      wishlists: state.wishlistReducer.wishlsts
+    }
+  }
+
+export default connect(mapStateToProps, {fetchIslands, fetchWishlists, fetchVillagers})(App);
