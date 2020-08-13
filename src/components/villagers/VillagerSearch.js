@@ -42,7 +42,7 @@ import React, { useState } from 'react';
 import Villagers from './Villagers';
 
   function VillagerSearch({villagers}) {
-  const [query, setQuery] = useState(' ')
+  const [query, setQuery] = useState('')
 
   const searchResults = () => {
     return villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase()))
