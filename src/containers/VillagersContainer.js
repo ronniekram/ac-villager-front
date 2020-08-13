@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {fetchVillagers} from '../actions/villagerActions';
 import Villager from '../components/villagers/Villager';
+import VillagerSearch from '../components/villagers/VillagerSearch'
+
 
 class VillagersContainer extends React.Component {
   componentDidMount() {
@@ -15,6 +17,7 @@ class VillagersContainer extends React.Component {
         <Switch>
         <Route path='/villagers/:id' render={(routerProps) => <Villager {...routerProps} villagers={this.props.villagers}/>}/>
         </Switch>
+        <VillagerSearch villagers={this.props.villagers}/>
       </>
     )
   }

@@ -13,6 +13,7 @@ class App extends React.Component {
         <IslandsContainer />
         <VillagersContainer />
         <WishlistsContainer />
+
       </div>
     )
   }
