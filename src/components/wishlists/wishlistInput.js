@@ -18,14 +18,14 @@ class wishlistInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addIsland(this.state);
+    this.props.addWishlist(this.state);
     this.props.history.push(`/wishlists`)
 
   }
 
   render() {
     return (
-      <div>
+      <>
         <h3>Create Wishlist</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Wishlist Name: </label>
@@ -39,7 +39,7 @@ class wishlistInput extends React.Component {
             <br />
           <input type="submit" />
         </form>
-      </div>
+      </>
     )
   }
 

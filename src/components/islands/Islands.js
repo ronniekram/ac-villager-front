@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-
-
 const Islands = (props) => {
   const list = props.islands.map(island => 
     <li key={island.id}> 
@@ -11,9 +9,12 @@ const Islands = (props) => {
   )
 
   return (
-    <ul>
-      {list}
-    </ul>
+    <>
+      <h3>Islands</h3>
+        <ul>
+          {list}
+        </ul>
+    </>
   )
 }
 

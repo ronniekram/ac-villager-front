@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {fetchIslands, addIsland, deleteIsland} from '../actions/islandActions';
 import {fetchVillagers} from '../actions/villagerActions'
-import Navbar from '../components/Navbar'
 import Island from '../components/islands/Island'
 import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';
-// import Villager from '../components/villagers/Villager'
+
 
 class IslandsContainer extends React.Component {
 
@@ -18,8 +17,7 @@ class IslandsContainer extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar />
+      <>
         <Switch>
           <Route path='/islands/new' 
             component={IslandInput} addIsland={addIsland} />
@@ -39,7 +37,7 @@ class IslandsContainer extends React.Component {
               <Islands {...routerProps} 
                 islands={this.props.islands} />} />
         </Switch>
-      </div>
+      </>
     )
   }
 

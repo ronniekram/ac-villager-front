@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-
-
 const Wishlists = (props) => {
   const list = props.wishlists.map(wishlist => 
     <li key={wishlist.id}> 
@@ -11,9 +9,12 @@ const Wishlists = (props) => {
   )
 
   return (
-    <ul>
-      {list}
-    </ul>
+    <>
+      <h3>Wishlists</h3>
+        <ul>
+          {list}
+        </ul>
+    </>
   )
 }
 

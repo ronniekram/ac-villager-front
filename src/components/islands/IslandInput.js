@@ -24,7 +24,7 @@ class IslandInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <h3>Create Island</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Island Name: </label>
@@ -38,7 +38,7 @@ class IslandInput extends React.Component {
             <br />
           <input type="submit" />
         </form>
-      </div>
+      </>
     )
   }
 

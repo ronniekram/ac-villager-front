@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {fetchWishlists, addWishlist, deleteWishlist} from '../actions/wishlistActions';
 import {fetchVillagers} from '../actions/villagerActions'
-import Navbar from '../components/Navbar'
 import Wishlist from '../components/wishlists/Wishlist'
 import Wishlists from '../components/wishlists/Wishlists'
 import wishlistInput from '../components/wishlists/wishlistInput';
-// import Villager from '../components/villagers/Villager'
+
 
 class WishlistContainer extends React.Component {
 
@@ -18,8 +17,7 @@ class WishlistContainer extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar />
+      <>
         <Switch>
           <Route path='/wishlists/new' 
             component={wishlistInput} addWishlist={addWishlist} />
@@ -39,7 +37,7 @@ class WishlistContainer extends React.Component {
               <Wishlists {...routerProps} 
                 wishlists={this.props.wishlists} />} />
         </Switch>
-      </div>
+      </>
     )
   }
 
@@ -48,7 +46,7 @@ class WishlistContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    wishlists: state.wishlistReducer.islands
+    wishlists: state.wishlistReducer.wishlists
   }
 }
 

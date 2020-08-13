@@ -19,13 +19,13 @@ class Island extends React.Component {
     const island = this.props.islands.find(island => island.id == this.props.match.params.id)
     const village = (island && island.villagers)
     return (
-      <div>
+      <>
         <h2> {island && island.name} </h2>
           <h4>Owner: {island && island.owner}</h4>
           <p>Villagers: </p>
             <Villagers villagers={village} />
         <button onClick={event => this.handleDelete(event)}>Delete Island?</button>
-    </div>
+    </>
     )
   }
 }

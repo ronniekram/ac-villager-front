@@ -11,11 +11,11 @@ class VillagersContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Switch>
         <Route exact path='/villagers/:id' render={(routerProps) => <Villager {...routerProps} villagers={this.props.villagers}/>}/>
         </Switch>
-      </div>
+      </>
     )
   }
 }
