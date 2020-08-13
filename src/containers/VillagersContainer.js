@@ -1,38 +1,4 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import {Route, Switch} from 'react-router-dom';
-import {fetchVillagers} from '../actions/villagerActions';
-import Villager from '../components/villagers/Villager';
-import VillagerSearch from '../components/villagers/VillagerSearch'
-
-
-class VillagersContainer extends React.Component {
-  componentDidMount() {
-    this.props.fetchVillagers()
-  }
-
-  render() {
-    return (
-      <>
-        <Switch>
-        <Route path='/villagers/:id' render={(routerProps) => <Villager {...routerProps} villagers={this.props.villagers}/>}/>
-        </Switch>
-        <VillagerSearch villagers={this.props.villagers}/>
-      </>
-    )
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    villagers: state.villagerReducer.villagers
-  }
-}
-
-export default connect(mapStateToProps, {fetchVillagers})(VillagersContainer);
-
-
-// import React, { useEffect } from 'react';
+// import React from 'react';
 // import { connect } from 'react-redux';
 // import {Route, Switch} from 'react-router-dom';
 // import {fetchVillagers} from '../actions/villagerActions';
@@ -40,21 +6,22 @@ export default connect(mapStateToProps, {fetchVillagers})(VillagersContainer);
 // import VillagerSearch from '../components/villagers/VillagerSearch'
 
 
-// function VillagersContainer({history, match, fetchVillagers}) {
+// class VillagersContainer extends React.Component {
+//   componentDidMount() {
+//     this.props.fetchVillagers()
+//   }
 
-//   useEffect(() => {
-//     fetchVillagers()
-//   }, [villagers])
-
+//   render() {
 //     return (
 //       <>
 //         <Switch>
-//         <Route path={`${match.url}/:id`} render={(routerProps) => <Villager {...routerProps} villagers={villagers}/>}/>
+//         <Route path='/villagers/:id' render={(routerProps) => <Villager {...routerProps} villagers={this.props.villagers}/>}/>
 //         </Switch>
-//         <VillagerSearch villagers={villagers}/>
+//         <VillagerSearch villagers={this.props.villagers}/>
 //       </>
 //     )
 //   }
+// }
 
 // const mapStateToProps = state => {
 //   return {
@@ -63,3 +30,32 @@ export default connect(mapStateToProps, {fetchVillagers})(VillagersContainer);
 // }
 
 // export default connect(mapStateToProps, {fetchVillagers})(VillagersContainer);
+
+
+import React from 'react';
+import { connect } from 'react-redux';
+import {Route, Switch} from 'react-router-dom';
+import {fetchVillagers} from '../actions/villagerActions';
+import Villager from '../components/villagers/Villager';
+import VillagerSearch from '../components/villagers/VillagerSearch'
+
+
+function VillagersContainer({history, match, villagers}) {
+
+    return (
+      <>
+        <Switch>
+        <Route path={`/villagers/:id`} render={(routerProps) => <Villager {...routerProps} villagers={villagers}/>}/>
+        </Switch>
+        <VillagerSearch villagers={villagers}/>
+      </>
+    )
+  }
+
+const mapStateToProps = state => {
+  return {
+    villagers: state.villagerReducer.villagers
+  }
+}
+
+export default connect(mapStateToProps, {fetchVillagers})(VillagersContainer);
