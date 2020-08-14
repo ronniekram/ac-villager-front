@@ -10,8 +10,8 @@ function VillagerSearch({villagers, island}) {
     return villagers && villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase()))
   }
 
-  const addToIsland = (villager, island) => {
-      addVillager(villager, island)
+  const addToIsland = (villager, islandId) => {
+      addVillager(villager, islandId)
   }
 
 
@@ -22,7 +22,7 @@ function VillagerSearch({villagers, island}) {
       } else {
         return (
           <ul>
-            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <button onClick={addToIsland(villager.id, island.id)}>Add Villager</button> </li>)}
+            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <button onClick={addToIsland(villager.id, island.id)}> Add Villager </button> </li>)}
           </ul>
         )
       }
