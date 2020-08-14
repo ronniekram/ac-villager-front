@@ -10,7 +10,6 @@ function Island({history, match, islands, deleteIsland}) {
     history.push('/islands')
   }
 
-
     const island = islands.find(island => island.id == match.params.id)
     const village = (island && island.villagers)
     return (
