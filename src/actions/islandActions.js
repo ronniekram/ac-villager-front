@@ -70,6 +70,7 @@ export const removeVillager = (villagerId, islandId) => {
     fetch(`http://localhost:3000/islands/${islandId}/villagers/${villagerId}`, {
       method: 'DELETE'
     })
+    .then(island => console.log(island))
     .then(island => dispatch({type: 'REMOVE_VILLAGER', payload: island}))
   }
 }

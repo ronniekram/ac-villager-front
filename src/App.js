@@ -15,14 +15,16 @@ function App({fetchIslands, fetchVillagers}) {
   useEffect(() => {
     fetchIslands();
     fetchVillagers();
-  },[])
+  },[fetchIslands, fetchVillagers])
 
     return (
       <div className="App">
-        <Navbar />
-          <Route exact path="/" render={() => <Header />} />
-          <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
-          <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
+        <Router>
+          <Navbar />
+            <Route exact path="/" render={() => <Header />} />
+            <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
+            <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
+        </Router>
       </div>
     )
   }

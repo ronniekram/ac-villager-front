@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {deleteIsland} from '../../actions/islandActions'
 import Villagers from '../villagers/Villagers'
 
-function Island({history, match, islands, villagers, deleteIsland}) {
+function Island({history, match, islands, deleteIsland}) {
   
   const handleDelete = (island) => {
     deleteIsland(island)
@@ -18,8 +18,8 @@ function Island({history, match, islands, villagers, deleteIsland}) {
         <h2> {island && island.name} </h2>
           <h4>Owner: {island && island.owner}</h4>
           <p>Villagers: </p>
-            <Villagers villagers={village} />
-        <button onClick={() => handleDelete(island.id)}>Delete Wishlist?</button>
+            <Villagers villagers={village} island={island} />
+        <button onClick={() => handleDelete(island.id)}>Delete Island?</button>
     </>
     )
   }
