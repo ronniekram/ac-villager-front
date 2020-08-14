@@ -12,7 +12,7 @@ import {fetchIslands} from './actions/islandActions';
 import {fetchVillagers} from './actions/villagerActions';
 
 
-function App({fetchIslands, fetchWishlists, fetchVillagers, villagers}) {
+function App({fetchIslands, fetchWishlists, fetchVillagers}) {
 
   useEffect(() => {
     fetchIslands();

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import VillagersContainer from '../containers/VillagersContainer';
 
-const Navbar = () => {
+function Navbar() {
   return (
     <nav className="navbar navbar-light navbar-expand-md">
       <div className="container-fluid"><p className="navbar-brand">Village Watch: New Horizons</p>
@@ -10,6 +11,7 @@ const Navbar = () => {
         <Link to='/wishlists' style={{paddingRight: '10px'}}> All Wishlists </Link>
         <Link to='/wishlists/new' style={{paddingRight: '10px'}}> New Wishlist </Link>
       </div>
+      <VillagersContainer />
   </nav>
   )
 }
