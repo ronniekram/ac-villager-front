@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import Villagers from './Villagers';
 
   function VillagerSearch({villagers}) {
@@ -9,10 +10,15 @@ import Villagers from './Villagers';
   }
 
    const displayResults = () => {
+    let results = searchResults();
       if (query === '') {
         return <div></div>
       } else {
-        return <Villagers villagers={searchResults()} />
+        return (
+          <ul>
+            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> </li>)}
+          </ul>
+        )
       }
     }
     

@@ -17,22 +17,3 @@ function Villagers({villagers}) {
 }
 
 export default Villagers;
-
-// import React from 'react';
-// import { Link } from 'react-router-dom'
-
-// function Villagers({villagers}) {
-  
-//   const list = Object.keys(villagers).map(villagerId => 
-//     <Link key={villagerId} to={`/villagers/${villagerId}`}> {villagers[villagerId].name} </Link> 
-//     );
-//   return (
-//     <>
-//     <ul>
-//       {list}
-//     </ul>
-//     </>
-//   )
-// }
-
-// export default Villagers;
