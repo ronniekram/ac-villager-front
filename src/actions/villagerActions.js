@@ -11,9 +11,9 @@ export function fetchVillagers() {
   }
 }
 
-export const addVillager = (villager, islandId) => {
+export const addVillager = (villagerId, islandId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/villagers/${villager.id}`, {
+    fetch(`http://localhost:3000/villagers/${villagerId}`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -24,7 +24,7 @@ export const addVillager = (villager, islandId) => {
       })
     })
     .then(resp => resp.json())
-    .then(island => dispatch({type: 'ADD_VILLAGER', payload: island}))
+    .then(villager => dispatch({type: 'ADD_VILLAGER', payload: villager}))
   }
 }
 

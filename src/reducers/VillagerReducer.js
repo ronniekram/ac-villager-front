@@ -13,7 +13,7 @@ const villagerReducer = (state = { villagers: [], loading: false }, action) => {
         loading: false
       }
       case 'ADD_VILLAGER': 
-      let villagersPlus = state.islands.map(villager => {
+      let villagersPlus = state.villagers.map(villager => {
         if (villager.id === action.payload.id) {
           return action.payload
         } else {
