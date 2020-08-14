@@ -3,29 +3,27 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar'
-import Header from './Header'
 import IslandsContainer from './containers/IslandsContainer';
-import WishlistsContainer from './containers/wishlistContainer';
 import VillagersContainer from './containers/VillagersContainer';
-import {fetchWishlists} from './actions/wishlistActions';
+import IslandInput from './components/islands/IslandInput'
 import {fetchIslands} from './actions/islandActions';
 import {fetchVillagers} from './actions/villagerActions';
 
 
-function App({fetchIslands, fetchWishlists, fetchVillagers}) {
+function App({fetchIslands, fetchVillagers}) {
 
   useEffect(() => {
     fetchIslands();
     fetchVillagers();
-    fetchWishlists();
-  },[fetchIslands, fetchVillagers, fetchWishlists])
+    // fetchWishlists();
+  },[fetchIslands, fetchVillagers])
 
     return (
       <div className="App">
         <Navbar />
-          <Route exact path="/" render={() => <Header />} />
+          <Route exact path="/" render={() => <IslandInput />} />
           <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
-          <Route path="/wishlists" render={(routerProps) => <WishlistsContainer {...routerProps} /> } />
+          {/* <Route path="/wishlists" render={(routerProps) => <WishlistsContainer {...routerProps} /> } /> */}
           <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
       </div>
     )
@@ -35,8 +33,8 @@ function App({fetchIslands, fetchWishlists, fetchVillagers}) {
     return {
       islands: state.islandReducer.islands,
       villagers: state.villagerReducer.villagers,
-      wishlists: state.wishlistReducer.wishlsts
+      // wishlists: state.wishlistReducer.wishlsts
     }
   }
 
-export default connect(mapStateToProps, {fetchIslands, fetchWishlists, fetchVillagers})(App);
+export default connect(mapStateToProps, {fetchIslands, fetchVillagers})(App);

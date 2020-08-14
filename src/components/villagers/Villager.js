@@ -15,6 +15,7 @@ function Villager({match, villagers}) {
           <p>Personality: {villager && villager.personality} </p>
           <p>Species: {villager && villager.species} </p>
           <p>Birthday: {villager && villager.birthday} </p>
+          <button>Add to Island</button>
         </div>
     </div>
     </>

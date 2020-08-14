@@ -7,7 +7,6 @@ function IslandInput({history, addIsland}) {
 
   const [name, setName] = useState('');
   const [owner, setOwner] = useState('');
-  const [villager_ids, setVillagerIds] = useState([]);
 
 
   const handleSubmit = (e) => {
@@ -15,23 +14,19 @@ function IslandInput({history, addIsland}) {
     addIsland({
       name: name,
       owner: owner,
-      villager_ids: villager_ids
     })
       history.push(`/islands`)
   }
 
     return (
       <>
-        <h3>Create Island</h3>
+        <h3>Create Your Island</h3>
         <form onSubmit={handleSubmit}>
           <label>Island Name: </label>
           <input type='text' name="name" value={name} onChange={(e) => setName(e.target.value)} /> 
             <br />
           <label>Owner's Name: </label>
           <input type='text' value={owner} name="owner" onChange={(e) => setOwner(e.target.value)} />
-            <br />
-            <label>Villager: </label>
-            <input type="number" name="villager_ids" value={villager_ids} onChange={(e) => setVillagerIds(e.target.value)} /> 
             <br />
           <input type="submit" />
         </form>
