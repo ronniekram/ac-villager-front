@@ -22,7 +22,7 @@ function App({fetchIslands, fetchVillagers}) {
       <div className="App">
         <Navbar />
           <Route exact path="/" render={() => <IslandInput />} />
-          <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
+          <Route path="/island" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
           {/* <Route path="/wishlists" render={(routerProps) => <WishlistsContainer {...routerProps} /> } /> */}
           <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
       </div>

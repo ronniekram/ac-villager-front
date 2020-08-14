@@ -15,7 +15,7 @@ function IslandInput({history, addIsland}) {
       name: name,
       owner: owner,
     })
-      history.push(`/islands`)
+      history.push(`/island`)
   }
 
     return (
