@@ -17,6 +17,9 @@ function Villager({match, villagers}) {
           <p>Birthday: {villager && villager.birthday} </p>
         </div>
     </div>
+    <div className="searchbar">
+      {/* <VillagerSearch villagers={villagers} /> */}
+    </div>
     </>
   )
 }
