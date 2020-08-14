@@ -19,24 +19,27 @@ export const addVillager = (villager, islandId) => {
         'Accept': 'application/json'
       },
       method: 'PATCH',
-      body: JSON.stringify(villager)
+      body: JSON.stringify({
+        island_id: islandId
+      })
     })
     .then(resp => resp.json())
     .then(island => dispatch({type: 'ADD_VILLAGER', payload: island}))
   }
 }
 
-export const removeVillager = (villager, islandId) => {
+export const removeVillager = (villagerId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/villagers/${villager.id}`, {
+    fetch(`http://localhost:3000/villagers/${villagerId}`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       method: 'PATCH',
-      body: JSON.stringify(villager)
+      body: JSON.stringify({
+        island_id: null
+      })
     })
-    .then(villager => console.log(villager))
     .then(villager => dispatch({type: 'REMOVE_VILLAGER', payload: villager}))
   }
 }
