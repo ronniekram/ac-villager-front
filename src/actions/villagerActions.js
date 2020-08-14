@@ -23,8 +23,11 @@ export const addVillager = (villagerId, islandId) => {
         island_id: islandId
       })
     })
-    .then(resp => resp.json())
-    .then(villager => dispatch({type: 'ADD_VILLAGER', payload: villager}))
+    // .then(resp => resp.json())
+    .then(villager => dispatch({
+      type: 'ADD_VILLAGER', 
+      payload: villager})
+    )
   }
 }
 

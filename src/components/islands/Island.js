@@ -20,6 +20,7 @@ function Island({history, match, islands, deleteIsland, villagers}) {
           <p>Villagers: </p>
             <Villagers villagers={village} />
         <button onClick={() => handleDelete(island.id)}>Delete Island?</button>
+        
         <VillagerSearch villagers={villagers} island={island} />
     </>
     )

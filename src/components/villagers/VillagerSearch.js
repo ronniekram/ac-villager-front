@@ -14,11 +14,10 @@ function VillagerSearch({villagers, island}) {
       if (query === '') {
         return <div></div>
       } else {
-        return (
-          <ul>
+        return  <ul>
             {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <button onClick={addVillager(villager.id, island.id)}> Add Villager </button> </li>)}
           </ul>
-        )
+        
       }
     }
     
