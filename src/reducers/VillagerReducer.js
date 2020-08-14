@@ -22,8 +22,9 @@ const villagerReducer = (state = { villagers: [], loading: false }, action) => {
       })
       return {...state, villagers: villagersPlus}
     case 'REMOVE_VILLAGER':
+      debugger
       let villagersMinus = state.villagers.map(villager => {
-        if (villager.id === action.payload.id) {
+        if (villager.id == action.payload.id) {
           return action.payload
         } else {
           return villager
