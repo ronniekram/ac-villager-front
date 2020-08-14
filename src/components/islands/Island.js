@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {deleteIsland} from '../../actions/islandActions'
 import Villagers from '../villagers/Villagers'
 
-function Island({history, match, islands, deleteIsland}) {
+function Island({history, match, islands, villagers, deleteIsland}) {
   
   const handleDelete = (island) => {
     deleteIsland(island)

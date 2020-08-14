@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import VillagersContainer from '../containers/VillagersContainer';
+// import VillagersContainer from '../containers/VillagersContainer';
 
 function Navbar() {
   return (
@@ -11,7 +11,7 @@ function Navbar() {
         <Link to='/wishlists' style={{paddingRight: '10px'}}> All Wishlists </Link>
         <Link to='/wishlists/new' style={{paddingRight: '10px'}}> New Wishlist </Link>
       </div>
-      <VillagersContainer />
+      {/* <VillagersContainer /> */}
   </nav>
   )
 }
