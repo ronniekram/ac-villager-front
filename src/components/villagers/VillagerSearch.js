@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux'
+import {addVillager} from '../../actions/villagerActions'
 import { Link } from 'react-router-dom'
 
-  function VillagerSearch({villagers}) {
+function VillagerSearch({villagers, island}) {
   const [query, setQuery] = useState('')
 
   const searchResults = () => {
     return villagers && villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase()))
   }
+
+  const addToIsland = (villager, island) => {
+      addVillager(villager, island)
+  }
+
 
    const displayResults = () => {
     let results = searchResults();
@@ -15,7 +22,7 @@ import { Link } from 'react-router-dom'
       } else {
         return (
           <ul>
-            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <button>Add Villager</button> </li>)}
+            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <button onClick={addToIsland(villager.id, island.id)}>Add Villager</button> </li>)}
           </ul>
         )
       }
@@ -30,4 +37,4 @@ import { Link } from 'react-router-dom'
     )
   }
 
-export default VillagerSearch;
+export default connect(null, {addVillager})(VillagerSearch);

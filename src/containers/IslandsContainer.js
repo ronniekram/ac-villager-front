@@ -6,7 +6,7 @@ import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';
 
 
-function IslandsContainer({islands}) {
+function IslandsContainer({islands, villagers}) {
 
     return (
       <>
