@@ -26,6 +26,21 @@ export const addIsland = (data) => {
   }
 }
 
+export const editIsland = (data) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/islands/${data.id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }, 
+      method: 'PATCH',
+      body: JSON.stringify(data)
+    })
+    .then(resp => resp.json())
+    .then(island => dispatch({type: 'EDIT_ISLAND', payload: island}))
+  }
+}
+
 export const deleteIsland = (islandId) => {
   return (dispatch) => {
     return fetch(`http://localhost:3000/islands/${islandId}`, {
@@ -47,5 +62,14 @@ export const addVillager = (villager, islandId) => {
     })
     .then(resp => resp.json())
     .then(island => dispatch({type: 'ADD_VILLAGER', payload: island}))
+  }
+}
+
+export const removeVillager = (villagerId, islandId) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/islands/${islandId}/villagers/${villagerId}`, {
+      method: 'DELETE'
+    })
+    .then(island => dispatch({type: 'REMOVE_VILLAGER', payload: island}))
   }
 }

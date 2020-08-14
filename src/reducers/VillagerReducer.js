@@ -12,11 +12,6 @@ const villagerReducer = (state = { villagers: [], loading: false }, action) => {
         villagers: action.villagers,
         loading: false
       }
-      case 'FILTER_VILLAGERS': 
-      return {
-        ...state,
-        villagers: action.villagers
-      }
     default:
       return state;
   }
