@@ -34,3 +34,18 @@ export const deleteIsland = (islandId) => {
     .then(island => dispatch({type: 'DELETE_ISLAND', payload: island}))
   }
 }
+
+export const addVillager = (villager, islandId) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/islands/${islandId}/villagers`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(villager)
+    })
+    .then(resp => resp.json())
+    .then(island => dispatch({type: 'ADD_VILLAGER', payload: island}))
+  }
+}

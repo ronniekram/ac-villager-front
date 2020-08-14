@@ -14,14 +14,14 @@ function IslandsContainer({islands}) {
 
         <Route exact path={`/island`} render={(routerProps) => <Islands {...routerProps} islands={islands} />} />
 
-          {/* <Route path={`/islands/new`} 
+          <Route path={`/islands/new`} 
             render={(routerProps) => 
             <IslandInput {...routerProps}/>} />
 
           <Route exact path={`/islands/:id`}
             render={(routerProps) => 
               <Island {...routerProps} 
-                islands={islands} />}/> */}
+                islands={islands} />}/>
         </Switch>
       </>
     )

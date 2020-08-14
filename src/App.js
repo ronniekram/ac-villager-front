@@ -3,27 +3,29 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar'
+import Header from './Header'
 import IslandsContainer from './containers/IslandsContainer';
+import WishlistsContainer from './containers/wishlistContainer';
 import VillagersContainer from './containers/VillagersContainer';
-import IslandInput from './components/islands/IslandInput'
+import {fetchWishlists} from './actions/wishlistActions';
 import {fetchIslands} from './actions/islandActions';
 import {fetchVillagers} from './actions/villagerActions';
 
 
-function App({fetchIslands, fetchVillagers}) {
+function App({fetchIslands, fetchWishlists, fetchVillagers}) {
 
   useEffect(() => {
     fetchIslands();
     fetchVillagers();
-    // fetchWishlists();
-  },[fetchIslands, fetchVillagers])
+    fetchWishlists();
+  },[fetchIslands, fetchVillagers, fetchWishlists])
 
     return (
       <div className="App">
         <Navbar />
-          <Route exact path="/" render={() => <IslandInput />} />
-          <Route path="/island" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
-          {/* <Route path="/wishlists" render={(routerProps) => <WishlistsContainer {...routerProps} /> } /> */}
+          <Route exact path="/" render={() => <Header />} />
+          <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
+          <Route path="/wishlists" render={(routerProps) => <WishlistsContainer {...routerProps} /> } />
           <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
       </div>
     )
@@ -33,8 +35,8 @@ function App({fetchIslands, fetchVillagers}) {
     return {
       islands: state.islandReducer.islands,
       villagers: state.villagerReducer.villagers,
-      // wishlists: state.wishlistReducer.wishlsts
+      wishlists: state.wishlistReducer.wishlsts
     }
   }
 
-export default connect(mapStateToProps, {fetchIslands, fetchVillagers})(App);
+export default connect(mapStateToProps, {fetchIslands, fetchWishlists, fetchVillagers})(App);

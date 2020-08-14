@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-import Villagers from './Villagers';
 
   function VillagerSearch({villagers}) {
   const [query, setQuery] = useState('')
@@ -16,7 +15,7 @@ import Villagers from './Villagers';
       } else {
         return (
           <ul>
-            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> </li>)}
+            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <button>Add Villager</button> </li>)}
           </ul>
         )
       }
