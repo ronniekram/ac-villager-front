@@ -14,24 +14,6 @@ const islandReducer = (state = {islands: [], loading: false}, action) => {
       }
     case 'ADD_ISLAND':
       return {...state, islands: [...state.islands, action.payload]}
-    case 'ADD_VILLAGER': 
-      let islands = state.islands.map(island => {
-        if (island.id === action.payload.id) {
-          return action.payload
-        } else {
-          return island
-        }
-      })
-      return {...state, islands: islands}
-    case 'DELETE_VILLAGER':
-      let islandsTwo = state.islands.map(island => {
-        if (island.id === action.payload.id) {
-          return action.payload
-        } else {
-          return island
-        }
-      })
-      return {...state, islands: islandsTwo}
     case 'DELETE_ISLAND':
       const islandsThree = state.islands.filter(island => island.id !== action.id)
       return {...state, islandsThree}
