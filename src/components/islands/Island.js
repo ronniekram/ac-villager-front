@@ -27,10 +27,7 @@ function Island({history, match, islands, deleteIsland, villagers}) {
               <Card.Subtitle>
                 {island && island.owner}
               </Card.Subtitle>
-              <Card.Text>
-                <p>Villagers: </p>
                 <Villagers villagers={village} />
-              </Card.Text>
               <Button size="sm" variant="light" onClick={() => handleDelete(island.id)}>Delete Island?</Button>
             </Card.Body>
           </Card>

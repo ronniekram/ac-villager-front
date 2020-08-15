@@ -27,6 +27,7 @@ function Villagers({removeVillager, villagers, history, match}) {
     <>
         <Route path="/villagers/:id" render={(routerProps) => <Villager {...routerProps} villagers={villagers} />} />
         <ul className="village">
+          <p>Villagers: </p>
           {list}
         </ul>
     </>

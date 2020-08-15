@@ -16,7 +16,7 @@ function App({fetchIslands, fetchVillagers}) {
   useEffect(() => {
     fetchIslands();
     fetchVillagers();
-  },[fetchIslands, fetchVillagers])
+  },[])
 
     return (
       <Container className="container">
