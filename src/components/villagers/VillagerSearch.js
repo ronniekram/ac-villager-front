@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import {addVillager} from '../../actions/villagerActions'
 import { Link } from 'react-router-dom'
@@ -14,16 +15,13 @@ function VillagerSearch({villagers, island, addVillager}) {
     window.location.reload(true);
   }
 
-  // save and try this ? ^ 
-
-//gonna punt my computer into the river after i turn this in
    const displayResults = () => {
     let results = searchResults();
       if (query === '') {
         return <div></div>
       } else {
-        return  <ul>
-            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <button onClick={() => handleAdd(villager.id, island.id)}> Add Villager </button> </li>)}
+        return  <ul className="column">
+            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <Button variant="outline-secondary" onClick={() => handleAdd(villager.id, island.id)}> Add Villager </Button> </li>)}
           </ul>
 
         

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import { Row, Col } from 'react-bootstrap'
 function Islands({islands}) {
   const list = islands.map(island => 
     <li key={island.id}> 
@@ -10,10 +10,14 @@ function Islands({islands}) {
 
   return (
     <>
-      <h3>Islands</h3>
+    <Row>
+      <Col md="auto" className="column">
         <ul>
-          {list}
-        </ul>  
+          <h4>Islands</h4>
+            {list}
+        </ul>
+      </Col>  
+    </Row>
     </>
   )
 }

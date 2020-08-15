@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import { Card, Col, Row, Button } from 'react-bootstrap';
 import {deleteIsland} from '../../actions/islandActions'
 import Villagers from '../villagers/Villagers'
 import VillagerSearch from '../villagers/VillagerSearch'
@@ -15,13 +16,28 @@ function Island({history, match, islands, deleteIsland, villagers}) {
     const village = (island && island.villagers)
     return (
       <>
-        <h2> {island && island.name} </h2>
-          <h4>Owner: {island && island.owner}</h4>
-          <p>Villagers: </p>
-            <Villagers villagers={village} />
-        <button onClick={() => handleDelete(island.id)}>Delete Island?</button>
-        
-        <VillagerSearch villagers={villagers} island={island} />
+      <Row>
+        <Col md={4} className="column">
+          <Card className="card island-info">
+            <Card.Body>
+              <Card.Title>
+                {island && island.name}
+              </Card.Title>
+              <Card.Subtitle>
+                {island && island.owner}
+              </Card.Subtitle>
+              <Card.Text>
+                <p>Villagers: </p>
+                <Villagers villagers={village} />
+              </Card.Text>
+              <Button variant="outline-secondary" onClick={() => handleDelete(island.id)}>Delete Island?</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={3} className="column">
+          <VillagerSearch villagers={villagers} island={island} />
+        </Col>
+      </Row>
     </>
     )
   }
@@ -30,8 +46,5 @@ function Island({history, match, islands, deleteIsland, villagers}) {
       villagers: state.villagerReducer.villagers
     }
   }
-//right down here king
-// iwiwd
-// hm.....
 
 export default connect(mapStateToProps, {deleteIsland})(Island);
