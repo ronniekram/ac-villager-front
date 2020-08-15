@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 
 function Villager({match, villagers}) {
   const villager = villagers && villagers.find(villager => 
@@ -8,7 +8,6 @@ function Villager({match, villagers}) {
 
   return (
     <>
-    <Row>
       <Col md="auto" className="column">
         <Card className="card villager-info">
           <div><img src={ villager && villager.image} alt={villager && villager.name} /></div>
@@ -26,7 +25,6 @@ function Villager({match, villagers}) {
           </Card.Body>
         </Card>
         </Col>
-    </Row>
     </>
   )
 }

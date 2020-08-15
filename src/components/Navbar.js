@@ -5,8 +5,8 @@ function Navbar() {
   return (
     <nav className="navbar navbar-light navbar-expand-md">
       <div className="container-fluid">Village Watch: New Horizons
-        <Link to='/islands' style={{color: '#232d47' }}> All Islands </Link>
-        <Link to='/islands/new' style={{color: '#232d47' }}> New Island </Link>
+        <Link to='/islands' className="link"> All Islands </Link>
+        <Link to='/islands/new' className="link"> New Island </Link>
       </div>
   </nav>
   )

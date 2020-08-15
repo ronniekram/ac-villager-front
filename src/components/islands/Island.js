@@ -1,9 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import { Card, Col, Row, Button } from 'react-bootstrap';
-import {deleteIsland} from '../../actions/islandActions'
-import Villagers from '../villagers/Villagers'
-import VillagerSearch from '../villagers/VillagerSearch'
+import { Card, Col, Button } from 'react-bootstrap';
+import {deleteIsland} from '../../actions/islandActions';
+import Villagers from '../villagers/Villagers';
+// import Villager from '../villagers/Villager';
+import VillagerSearch from '../villagers/VillagerSearch';
+
 
 function Island({history, match, islands, deleteIsland, villagers}) {
   
@@ -16,7 +18,6 @@ function Island({history, match, islands, deleteIsland, villagers}) {
     const village = (island && island.villagers)
     return (
       <>
-      <Row>
         <Col md={4} className="column">
           <Card className="card island-info">
             <Card.Body>
@@ -30,14 +31,13 @@ function Island({history, match, islands, deleteIsland, villagers}) {
                 <p>Villagers: </p>
                 <Villagers villagers={village} />
               </Card.Text>
-              <Button variant="outline-secondary" size="sm" onClick={() => handleDelete(island.id)}>Delete Island?</Button>
+              <Button size="sm" variant="light" onClick={() => handleDelete(island.id)}>Delete Island?</Button>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3} className="column">
           <VillagerSearch villagers={villagers} island={island} />
         </Col>
-      </Row>
     </>
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Row, Col, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import {removeVillager} from '../../actions/villagerActions'
 import Villager from './Villager'
 
@@ -16,23 +16,19 @@ function Villagers({removeVillager, villagers, history, match}) {
     <li key={villager.id}> 
     <Link to={`/villagers/${villager.id}`} 
       villagers={villagers} 
-      style={{color: '#232d47' }}>  
+      className="link">  
       {villager.name} </Link> 
-        <Button variant="outline-secondary" 
+        <Button 
           size="sm" 
+          variant="light"
           onClick={() => handleRemove(villager.id, villager.island_id)} > x </Button>
       </li>)
   return (
     <>
-    <Row>
-      <Col md="auto">
-
         <Route path="/villagers/:id" render={(routerProps) => <Villager {...routerProps} villagers={villagers} />} />
-        <ul>
+        <ul className="village">
           {list}
         </ul>
-      </Col>
-    </Row>
     </>
   )
 }

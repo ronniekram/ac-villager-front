@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
-import Villagers from '../components/villagers/Villagers'
-import Villager from '../components/villagers/Villager'
-
+// import { Col } from 'react-bootstrap';
+import Villagers from '../components/villagers/Villagers';
+import Villager from '../components/villagers/Villager';
 
 function VillagersContainer({match, villagers}) {
 
@@ -16,7 +16,6 @@ function VillagersContainer({match, villagers}) {
             <Villager {...routerProps} 
                 villagers={villagers} />}/>
         </Switch>
-
       </>
     )
   }

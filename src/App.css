@@ -14,7 +14,7 @@
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #ead86d;
+  background-color: #86a4ee;
   font-family: Roboto;
 }
 
@@ -22,7 +22,7 @@ html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
-  background-color: #ead86d;
+  background-color: #86a4ee;
 }
 
 nav {
@@ -89,7 +89,32 @@ div {
   margin: 10px;
   border-radius: 15px;
   border: 1px solid #6178b2;
-  background-color: #86a4ee;
+  background-color: #EDDA5C;
+}
+
+
+.village {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  font-size: 20px;
+}
+
+.village li {
+  padding: 4px;
+}
+
+.container {
+  width: 55%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 15px 10px 15px;
+  padding-bottom: 20px;
+}
+.link {
+  color: #232d47;
+  text-decoration: none;
 }
 
 #root li {
