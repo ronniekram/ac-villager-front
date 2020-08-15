@@ -20,8 +20,11 @@ function VillagerSearch({villagers, island, addVillager}) {
       if (query === '') {
         return <div></div>
       } else {
-        return  <ul className="column">
-            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`} villagers={villagers}> {villager.name} </Link> <Button variant="outline-secondary" onClick={() => handleAdd(villager.id, island.id)}> Add Villager </Button> </li>)}
+        return  <ul>
+            {results.map(villager => <li key={villager.id}> <Link to={`/villagers/${villager.id}`}      villagers={villagers} 
+              style={{color: '#232d47' }}> {villager.name} </Link> 
+                <Button variant="outline-secondary" size="sm" 
+                onClick={() => handleAdd(villager.id, island.id)}> Add Villager </Button> </li>)}
           </ul>
 
         
@@ -29,8 +32,12 @@ function VillagerSearch({villagers, island, addVillager}) {
     }
     
     return (
-      <div className="searchbar">
-        <input type="text" placeholder="Search villager by name..." value={query} onChange={(e) => setQuery(e.target.value)} />
+      <div className="column">
+        <input type="text" 
+          className="searchbar"
+          placeholder="Search villager by name..." 
+          value={query} 
+          onChange={(e) => setQuery(e.target.value)} />
 
         {displayResults()}
       </div>
