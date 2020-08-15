@@ -30,5 +30,8 @@ function Island({history, match, islands, deleteIsland, villagers}) {
       villagers: state.villagerReducer.villagers
     }
   }
+//right down here king
+// iwiwd
+// hm.....
 
 export default connect(mapStateToProps, {deleteIsland})(Island);

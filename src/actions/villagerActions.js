@@ -11,19 +11,21 @@ export function fetchVillagers() {
   }
 }
 
+
+
 export const addVillager = (villagerId, islandId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/villagers/${villagerId}`, {
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      method: 'PATCH',
       body: JSON.stringify({
         island_id: islandId
       })
     })
-    // .then(resp => resp.json())
+    .then(resp => resp.json())
     .then(villager => dispatch({
       type: 'ADD_VILLAGER', 
       payload: villager})
