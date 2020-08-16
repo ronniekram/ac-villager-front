@@ -13,15 +13,15 @@ function Villager({match, villagers}) {
         <Card className="card villager-info">
           <div><img src={ villager && villager.image} alt={villager && villager.name} className="vil-img"/></div>
           <Card.Body className="villager-info">
-            <Card.Title className="villager-info"> {villager && villager.name} </Card.Title>
+            <Card.Title className="villager-info"> <b>{villager && villager.name} </b> </Card.Title>
               <Card.Text className="villager-info">
-                <strong>Gender:</strong> {villager && villager.gender} <br/>
+                <b>Gender:</b> {villager && villager.gender} <br/>
 
-                <strong>Personality:</strong> {villager && villager.personality} <br/>
+                <b>Personality:</b> {villager && villager.personality} <br/>
 
-                <strong>Species:</strong> {villager && villager.species} <br/ >
+                <b>Species:</b> {villager && villager.species} <br/>
 
-                <strong>Birthday:</strong> {villager && villager.birthday}
+                <b>Birthday:</b> {villager && villager.birthday}
               </Card.Text>
           </Card.Body>
         </Card>
