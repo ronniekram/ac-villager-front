@@ -15,13 +15,13 @@ function Villager({match, villagers}) {
           <Card.Body className="villager-info">
             <Card.Title className="villager-info"> {villager && villager.name} </Card.Title>
               <Card.Text className="villager-info">
-                <span>Gender: </span> {villager && villager.gender} <br/>
+                <strong>Gender:</strong> {villager && villager.gender} <br/>
 
-                <span>Personality: </span> {villager && villager.personality} <br/>
+                <strong>Personality:</strong> {villager && villager.personality} <br/>
 
-                <span>Species: </span> {villager && villager.species} <br/ >
+                <strong>Species:</strong> {villager && villager.species} <br/ >
 
-                <span>Birthday: </span> {villager && villager.birthday}
+                <strong>Birthday:</strong> {villager && villager.birthday}
               </Card.Text>
           </Card.Body>
         </Card>
