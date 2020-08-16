@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 import { Card, Col, Button } from 'react-bootstrap';
 import {deleteIsland} from '../../actions/islandActions';
 import Villagers from '../villagers/Villagers';
-// import Villager from '../villagers/Villager';
 import VillagerSearch from '../villagers/VillagerSearch';
+import islandX from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/islandX.png'
 
 
 function Island({history, match, islands, deleteIsland, villagers}) {
@@ -30,6 +30,7 @@ function Island({history, match, islands, deleteIsland, villagers}) {
                 <p>Villagers:</p>
                 <Villagers villagers={village} island={island} />
               <Button size="sm" variant="light" onClick={() => handleDelete(island.id)}>Delete Island?</Button>
+              {/* <img src={islandX} alt="Delete Island?" onClick={handleDelete(island && island.id)} /> */}
             </Card.Body>
           </Card>
         </Col>

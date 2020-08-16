@@ -3,8 +3,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
 
 #root {
@@ -15,7 +14,7 @@
   color: #212529;
   text-align: left;
   background-color: #86a4ee;
-  font-family: Roboto;
+  font-family: 'Noto Sans Kr';
 }
 
 html {

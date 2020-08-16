@@ -5,6 +5,8 @@ import { Button } from 'react-bootstrap'
 import {removeVillager} from '../../actions/villagerActions'
 import {addVillager} from '../../actions/villagerActions';
 import Villager from './Villager'
+import add from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/add.png'
+import remove from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/remove.png'
 
 function Villagers({addVillager, removeVillager, villagers, island, history, match}) {
 
@@ -20,16 +22,11 @@ function Villagers({addVillager, removeVillager, villagers, island, history, mat
 
   const buttonType = (villager, island) => {
     if (villager.island_id === island.id) {
-      return <Button 
-        size="sm" 
-        variant="light"
-        onClick={() => handleRemove(villager.id, villager.island_id)} > x </Button>
+      return <img src={remove} alt="new island link" onClick={() => handleRemove(villager.id, island.id)} /> 
     } else if (villager.island_id !== island.id && island.villagers.length < 10) {
-      return <Button size="sm" 
-        variant="light"
-        onClick={() => handleAdd(villager.id, island.id)}> Add Villager </Button>
+        return <img src={add} alt="new island link" onClick={() => handleAdd(villager.id, island.id)} />
     } else if (island.villagers.length >= 10) {
-      return null
+        return null
     }
   }
 
