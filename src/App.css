@@ -25,6 +25,19 @@ html {
   background-color: #86a4ee;
 }
 
+div {
+  background-color: transparent;
+}
+
+ul {
+  background-color: transparent;
+  margin: 15px;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+}
 
 .navbar {
   border-bottom: 1px solid black;
@@ -46,20 +59,24 @@ html {
   border-radius: 10px;
 }
 
+.header-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 15px 10px 5px 10px;
+}
+
+.container {
+  width: 55%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 15px 10px 15px;
+  padding-bottom: 20px;
+}
+
 .searchbar {
   margin: 10px;
   border: 1px solid black;
   border-radius: 5px;
-}
-
-div {
-  background-color: transparent;
-}
-
-ul {
-  background-color: transparent;
-  margin: 15px;
-  padding: 20px;
 }
 
 .column .card {
@@ -78,16 +95,13 @@ ul {
   font-size: 20px;
 }
 
-.village li {
-  padding: 4px;
+.vil-img  {
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
-.container {
-  width: 55%;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 15px 10px 15px;
-  padding-bottom: 20px;
+.village li {
+  padding: 4px;
 }
 
 .footer {
@@ -96,6 +110,7 @@ ul {
   text-align: center;
   border-top: 1px solid black;
 }
+
 .link {
   color: #232d47;
   text-decoration: none;
@@ -103,18 +118,4 @@ ul {
 
 #root li {
   list-style: none;
-}
-
-.vil-img  {
-  border-radius: 5px;
-}
-
-img {
-  max-width: 100%;
-}
-
-.header-container {
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 15px 10px 15px;
 }
