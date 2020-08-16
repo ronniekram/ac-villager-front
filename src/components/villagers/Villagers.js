@@ -24,10 +24,12 @@ function Villagers({addVillager, removeVillager, villagers, island, history, mat
         size="sm" 
         variant="light"
         onClick={() => handleRemove(villager.id, villager.island_id)} > x </Button>
-    } else if (villager.island_id !== island.id) {
+    } else if (villager.island_id !== island.id && island.villagers.length < 10) {
       return <Button size="sm" 
         variant="light"
         onClick={() => handleAdd(villager.id, island.id)}> Add Villager </Button>
+    } else if (island.villagers.length >= 10) {
+      return null
     }
   }
 
