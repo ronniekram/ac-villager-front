@@ -11,7 +11,7 @@ function Villager({match, villagers}) {
     <>
       <Col md="auto" className="column">
         <Card className="card villager-info">
-          <div><img src={ villager && villager.image} alt={villager && villager.name} /></div>
+          <div><img src={ villager && villager.image} alt={villager && villager.name} className="vil-img"/></div>
           <Card.Body className="villager-info">
             <Card.Title className="villager-info"> {villager && villager.name} </Card.Title>
               <Card.Text className="villager-info">

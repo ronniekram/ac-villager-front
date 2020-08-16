@@ -1,14 +1,13 @@
 import React from 'react';
-import VillagersContainer from './containers/VillagersContainer'
+import AC2 from './AC2.jpg';
+import { Row } from 'react-bootstrap';
 
 function Header() {
   return (
     <>
-      <div className="row"> 
-        <h2> This is where information about the App will go!!!!!! </h2>
-      </div>
-
-      <VillagersContainer />
+    <div className="header-container">
+        <img src={AC2} alt="animal crossing" className="nav-img" />
+    </div>
     </>
   )
 }
