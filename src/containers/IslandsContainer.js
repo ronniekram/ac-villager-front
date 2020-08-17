@@ -29,7 +29,8 @@ function IslandsContainer({islands}) {
 
 const mapStateToProps = state => {
   return {
-    islands: state.islandReducer.islands
+    islands: state.islandReducer.islands,
+    villagers: state.villagerReducer.villagers
   }
 }
 

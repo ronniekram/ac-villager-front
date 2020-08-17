@@ -12,24 +12,23 @@ function VillagersContainer({match, villagers}) {
       <>
         <Switch>
           <Route exact path="/villagers" render={(routerProps) => <Villagers {...routerProps} villagers={villagers} />} />
-          <Route path={`/villagers/:id`}
+          <Route exact path={`/villagers/:id`}
             render={(routerProps) => 
             <Villager {...routerProps} 
                 villagers={villagers} />}/>
-          {/* <Route path={`/villagers/:id`}
+          <Route path={`/search`}
             render={(routerProps) => 
-            <VillagerSearch {...routerProps} 
-                villagers={villagers} />}/> */}
+            <VillagerSearch {...routerProps} />}/>
           
         </Switch>
-        {/* <VillagerSearch villagers={villagers} /> */}
       </>
     )
   }
 
 const mapStateToProps = state => {
   return {
-    villagers: state.villagerReducer.villagers
+    villagers: state.villagerReducer.villagers, 
+    islands: state.islandReducer.islands
   }
 }
 

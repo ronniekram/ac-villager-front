@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {addIsland} from '../../actions/islandActions';
+import create from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/create.png'
 
 
 function IslandInput({history, addIsland}) {
@@ -20,7 +21,7 @@ function IslandInput({history, addIsland}) {
 
     return (
           <Col md="auto" className="column">
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className="container card">
               <h4>Create An Island</h4>
               <Form.Label size="sm" >Island Name: </Form.Label>
                 <Form.Control size="sm" type='text' name="name" value={name} onChange={(e) => setName(e.target.value)} /> 
@@ -28,7 +29,7 @@ function IslandInput({history, addIsland}) {
               <Form.Label size="sm" >Owner Name: </Form.Label>
                 <Form.Control size="sm" type='text' value={owner} name="owner" onChange={(e) => setOwner(e.target.value)} />
             <br />
-              <Button type="submit" size="sm" variant="light"> Create! </Button>
+              <img src={create} alt="Create Island" type="submit" className="form" />
            </Form>
           </Col>
     )
