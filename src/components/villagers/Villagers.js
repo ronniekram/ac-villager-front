@@ -3,7 +3,7 @@ import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {removeVillager} from '../../actions/villagerActions'
 import {addVillager} from '../../actions/villagerActions';
-// import Villager from './Villager'
+import Villager from './Villager'
 import add from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/add.png'
 import remove from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/remove.png'
 

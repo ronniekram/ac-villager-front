@@ -6,7 +6,7 @@ function VillagerSearch({villagers, island}) {
   const [query, setQuery] = useState('')
 
   const searchResults = () => {
-    return villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase())) 
+    return villagers && villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase())) 
     }
 
    const displayResults = () => {
@@ -30,5 +30,6 @@ function VillagerSearch({villagers, island}) {
       </Col>
     )
   }
+
   
 export default VillagerSearch;
