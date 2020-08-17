@@ -11,13 +11,13 @@ function Villagers({addVillager, removeVillager, villagers, island, history}) {
 
   const handleRemove = (villager, island) => {
     removeVillager(villager, island)
-    // window.location.reload(true);
+    window.location.reload(true);
   }
 
   const handleAdd = (villager, island) => {
     addVillager(villager, island);
     // history.push(`/islands/${island.id}`)
-    // window.location.reload(true);
+    window.location.reload(true);
   }
 
   const buttonType = (villager, island) => {
