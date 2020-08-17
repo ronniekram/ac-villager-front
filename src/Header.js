@@ -1,6 +1,6 @@
 import React from 'react';
 import AC2 from './components/img/AC2.jpg';
-import { Row } from 'react-bootstrap';
+// import { Row } from 'react-bootstrap';
 
 function Header() {
   return (

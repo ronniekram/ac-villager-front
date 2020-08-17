@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Button } from 'react-bootstrap'
 import {removeVillager} from '../../actions/villagerActions'
 import {addVillager} from '../../actions/villagerActions';
-import Villager from './Villager'
+// import Villager from './Villager'
 import add from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/add.png'
 import remove from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/remove.png'
 
-function Villagers({addVillager, removeVillager, villagers, island, history, match}) {
+function Villagers({addVillager, removeVillager, villagers, island, history}) {
 
   const handleRemove = (villager, island) => {
     removeVillager(villager, island)
-    window.location.reload(true);
+    // window.location.reload(true);
   }
 
   const handleAdd = (villager, island) => {
     addVillager(villager, island);
-    window.location.reload(true);
+    // history.push(`/islands/${island.id}`)
+    // window.location.reload(true);
   }
 
   const buttonType = (villager, island) => {
@@ -30,7 +30,7 @@ function Villagers({addVillager, removeVillager, villagers, island, history, mat
     }
   }
 
-    const list = villagers && villagers.map(villager =>
+    const list = villagers && villagers && villagers.map(villager =>
       <li key={villager.id}> 
       <Link to={`/villagers/${villager.id}`} 
         villagers={villagers} 
@@ -39,10 +39,12 @@ function Villagers({addVillager, removeVillager, villagers, island, history, mat
   
   return (
     <>
-        <Route path="/villagers/:id" render={(routerProps) => <Villager {...routerProps} villagers={villagers} />} />
+        {/* <Route path="/villagers/:id" render={(routerProps) => <Villager {...routerProps} villagers={villagers} />} /> */}
           {list}
+        {/* <Villager villagers={villagers} /> */}
     </>
   )
 }
+
 
 export default connect(null, {removeVillager, addVillager})(Villagers);

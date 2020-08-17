@@ -10,7 +10,7 @@ function VillagerSearch({villagers, island}) {
     }
 
    const displayResults = () => {
-    let results = searchResults();
+    const results = searchResults();
       if (query === '') {
         return <div></div>
       } else {

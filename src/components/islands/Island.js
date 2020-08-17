@@ -2,9 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux'
 import { Card, Col, Button } from 'react-bootstrap';
 import {deleteIsland} from '../../actions/islandActions';
+// import Villager from '../villagers/Villager';
 import Villagers from '../villagers/Villagers';
 import VillagerSearch from '../villagers/VillagerSearch';
-import islandX from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/islandX.png'
+// import VillagersContainer from '../../containers/VillagersContainer';
 
 
 function Island({history, match, islands, deleteIsland, villagers}) {
@@ -34,9 +35,12 @@ function Island({history, match, islands, deleteIsland, villagers}) {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={3} className="column">
+        <Col md={4} className="column">
           <VillagerSearch villagers={villagers} island={island} />
         </Col>
+        {/* <Col md={4} className="column">
+          <Villager villagers={villagers} />
+        </Col> */}
     </>
     )
   }
