@@ -10,7 +10,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import IslandsContainer from './containers/IslandsContainer';
 import VillagersContainer from './containers/VillagersContainer';
-import SearchContainer from './containers/SearchContainer';
 
 
 function App({fetchIslands, fetchVillagers}) {
@@ -33,7 +32,6 @@ function App({fetchIslands, fetchVillagers}) {
             {/* <Route exact path="/" render={() => <Header />} /> */}
             <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
             <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
-            <Route path="/search" render={(routerProps) => <SearchContainer {...routerProps} />} />
           </Row>
         </Router>
         <Footer />

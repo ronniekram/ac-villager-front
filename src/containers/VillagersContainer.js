@@ -37,17 +37,25 @@
 
 // export default connect(mapStateToProps)(VillagersContainer);
 
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import {removeVillager} from '../actions/villagerActions'
+import {removeVillager, addVillager} from '../actions/villagerActions'
 import Villager from '../components/villagers/Villager';
 import Villagers from '../components/villagers/Villagers';
+import SearchBar from '../components/villagers/SearchBar';
 
-function VillagersContainer({villagers, removeVillager, history}) {
+function VillagersContainer({villagers, islands, addVillager, removeVillager, history}) {
+
+  const [query, setQuery] = useState('');
 
   const handleRemove = (villager) => {
     removeVillager(villager);
+    history.push('/islands');
+  }
+
+  const handleAdd = (villager, island) => {
+    addVillager(villager, island);
     history.push('/islands');
   }
 
@@ -61,6 +69,13 @@ function VillagersContainer({villagers, removeVillager, history}) {
             render={(routerProps) => 
             <Villager {...routerProps} 
                 villagers={villagers} />}/>
+          <Route path={'/search'} 
+            render={(routerProps) => 
+            <SearchBar {...routerProps} 
+              villagers={villagers}
+              query={query} 
+              setQuery={setQuery}
+              handleAdd={handleAdd} /> } />
         </Switch>        
       </>
     )
@@ -73,4 +88,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {removeVillager})(VillagersContainer);
+export default connect(mapStateToProps, {addVillager, removeVillager})(VillagersContainer);

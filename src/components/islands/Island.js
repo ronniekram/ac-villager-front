@@ -50,8 +50,8 @@
 
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import SearchContainer from '../../containers/SearchContainer'
 import Villagers from '../villagers/Villagers';
+import SearchBar from '../villagers/SearchBar'
 import islandX from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/islandX.png'
 
 
@@ -77,9 +77,6 @@ function Island({islands, handleDelete, match}) {
             </Card.Body>
           </Card>
         </Col>
-        {/* <Col md={4} className="column">
-          <SearchContainer />
-        </Col> */}
     </>
     )
   }
