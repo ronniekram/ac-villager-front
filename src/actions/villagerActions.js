@@ -1,3 +1,5 @@
+// action describes what you want to do -- simple function that returns an object
+
 export function fetchVillagers() {
   return (dispatch) => {
     dispatch({type: 'FETCH_VILLAGERS'})

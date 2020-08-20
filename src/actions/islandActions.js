@@ -1,3 +1,6 @@
+// action describes what you want to do -- simple function that returns an object
+// "payload" is the argument for an action
+
 export function fetchIslands() {
   return (dispatch) => {
     dispatch({type: 'FETCH_ISLANDS'})

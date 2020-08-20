@@ -78,8 +78,19 @@ img {
   border-radius: 5px;
 }
 
-.form {
+.form-img {
   width: 91px;
+}
+
+.center-img {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.form {
+  padding: 20px;
+  margin: 15px;
+  align-self: center;
 }
 
 .column .card {

@@ -1,11 +1,9 @@
-  
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
 function Villager({match, villagers}) {
   const villager = villagers && villagers.find(villager => 
     villager.id == match.params.id)
-    console.log(villager)
 
   return (
     <>
