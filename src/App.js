@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import { Container, Row } from 'react-bootstrap';
+import {fetchIslands} from './actions/islandActions';
+import {fetchVillagers} from './actions/villagerActions';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import IslandsContainer from './containers/IslandsContainer';
 import VillagersContainer from './containers/VillagersContainer';
-import {fetchIslands} from './actions/islandActions';
-import {fetchVillagers} from './actions/villagerActions';
+import SearchContainer from './containers/SearchContainer';
 
 
 function App({fetchIslands, fetchVillagers}) {
@@ -17,7 +18,7 @@ function App({fetchIslands, fetchVillagers}) {
   useEffect(() => {
     fetchIslands();
     fetchVillagers();
-  },[fetchIslands, fetchVillagers])
+  },[])
 
     return (
       <>
@@ -32,6 +33,7 @@ function App({fetchIslands, fetchVillagers}) {
             {/* <Route exact path="/" render={() => <Header />} /> */}
             <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
             <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
+            <Route path="/search" render={(routerProps) => <SearchContainer {...routerProps} />} />
           </Row>
         </Router>
         <Footer />

@@ -2,11 +2,8 @@ import React from 'react';
 import { Col } from 'react-bootstrap';
 import SearchResults from './SearchResults';
 
-function SearchBar({addVillager, villagers, query, setQuery}) {
+function SearchBar({villagers, query, setQuery}) {
 
-  const handleAdd = (villager, island) => {
-    addVillager(villager, island);
-  }
 
   const results = villagers && villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase()))
 
@@ -14,7 +11,7 @@ function SearchBar({addVillager, villagers, query, setQuery}) {
     if (query === '') {
       return ''
     } else {
-      return <SearchResults villagers={results} handleAdd={handleAdd} />
+      return <SearchResults villagers={results} />
     }
   }
 

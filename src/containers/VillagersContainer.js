@@ -40,27 +40,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { removeVillager } from '../actions/villagerActions'
+import {removeVillager} from '../actions/villagerActions'
 import Villager from '../components/villagers/Villager';
 import Villagers from '../components/villagers/Villagers';
 
 function VillagersContainer({villagers, removeVillager, history}) {
 
-  const handleRemove = (villagerId) => {
-    removeVillager(villagerId);
-    history.push('/islands')
+  const handleRemove = (villager) => {
+    removeVillager(villager);
+    history.push('/islands');
   }
 
     return (
       <>
         <Switch>
           <Route exact path='/villagers' render={(routerProps) => 
-            <Villagers {...routerProps} villagers={villagers} handleRemove={handleRemove} />
+            <Villagers {...routerProps} handleRemove={handleRemove} villagers={villagers} />
           }></Route>
-          <Route path={`/villagers/:id`}
+          <Route exact path={`/villagers/:id`}
             render={(routerProps) => 
             <Villager {...routerProps} 
-                villagers={villagers} handleRemove={handleRemove} />}/>
+                villagers={villagers} />}/>
         </Switch>        
       </>
     )
@@ -68,7 +68,8 @@ function VillagersContainer({villagers, removeVillager, history}) {
 
 const mapStateToProps = state => {
   return {
-    villagers: state.villagerReducer.villagers
+    villagers: state.villagerReducer.villagers,
+    islands: state.islandReducer.islands
   }
 }
 

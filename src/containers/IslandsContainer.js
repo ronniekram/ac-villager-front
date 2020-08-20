@@ -45,7 +45,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {addIsland, deleteIsland} from '../actions/islandActions';
-import {removeVillager} from '../actions/villagerActions'
+// import {removeVillager} from '../actions/villagerActions'
 import Island from '../components/islands/Island'
 import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';

@@ -12,7 +12,8 @@ function Villagers({handleRemove, villagers, match}) {
         className="link">  
         {villager.name} </Link> 
           <img src={remove} alt="remove villager" 
-          onClick={() => handleRemove(villager.id)} /> 
+          onClick={() => {
+            return handleRemove(villager.id);}} /> 
       </li> )
   
   return <> {list} </>

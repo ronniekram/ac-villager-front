@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import {addVillager} from '../actions/villagerActions';
 import SearchBar from '../components/search/SearchBar';
+import SearchResults from '../components/search/SearchResults';
 
-function SearchContainer(villagers, addVillager) {
+function SearchContainer(addVillager, villagers) {
   const [query, setQuery] = useState('');
 
   return (
     <> 
-      <SearchBar villagers={villagers} query={query} setQuery={setQuery} addVillager={addVillager} />
+      <SearchBar query={query} setQuery={setQuery} villagers={villagers}  />
+      <SearchResults addVillager={addVillager} />
     </>
   )
 }
