@@ -51,7 +51,7 @@ import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';
 
 
-function IslandsContainer({addIsland, deleteIsland, islands, history}) {
+function IslandsContainer({addIsland, deleteIsland, islands, villagers, history}) {
   const [name, setName] = useState('');
   const [owner, setOwner] = useState('')
 
@@ -81,7 +81,7 @@ function IslandsContainer({addIsland, deleteIsland, islands, history}) {
           <Route exact path={`/islands/:id`}
             render={(routerProps) => 
               <Island {...routerProps} 
-                islands={islands} handleDelete={handleDelete} />}/>
+                islands={islands} villagers={villagers}handleDelete={handleDelete} />}/>
         </Switch>
       </>
     )

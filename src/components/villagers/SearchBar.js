@@ -1,24 +1,27 @@
-import React from 'react';
-import { Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addVillager } from '../../actions/villagerActions'
+// import { Col } from 'react-bootstrap';
+// import { Link } from 'react-router-dom'
 import SearchResults from './SearchResults';
-import add from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/add.png';
+// import add from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/add.png';
 
-function SearchBar({villagers, query, setQuery}) {
+function SearchBar({villagers}) {
+  const [query, setQuery] = useState('')
 
+  let results = villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase()))
 
-  const results = villagers && villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase()))
 
   const displayResults = () => {
     if (query === '') {
       return ''
     } else {
-      return <div> <SearchResults villagers={results}/> </div>
+      return <div> <SearchResults results={results}/> </div>
     }
   }
 
   return (
-    <Col className="column card">
+    <>
     <input type="text" 
       className="searchbar"
       placeholder="Search villager by name..." 
@@ -26,9 +29,9 @@ function SearchBar({villagers, query, setQuery}) {
       onChange={(e) => setQuery(e.target.value)} />
 
       {displayResults()}
-  </Col>
+  </>
   )
 
 }
 
-export default SearchBar;
+export default connect(null, {addVillager})(SearchBar);

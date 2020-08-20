@@ -69,13 +69,13 @@ function VillagersContainer({villagers, islands, addVillager, removeVillager, hi
             render={(routerProps) => 
             <Villager {...routerProps} 
                 villagers={villagers} />}/>
-          <Route path={'/search'} 
+          {/* <Route path={'/search'} 
             render={(routerProps) => 
             <SearchBar {...routerProps} 
               villagers={villagers}
               query={query} 
               setQuery={setQuery}
-              handleAdd={handleAdd} /> } />
+              handleAdd={handleAdd} /> } /> */}
         </Switch>        
       </>
     )
