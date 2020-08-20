@@ -44,7 +44,7 @@ export const removeVillager = (villagerId) => {
       },
       method: 'PATCH',
       body: JSON.stringify({
-        island_id: ''
+        island_id: null
       })
     })
     .then(villager => dispatch({type: 'REMOVE_VILLAGER', payload: villager}))

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import Villager from './Villager';
+// import Villager from './Villager';
 import remove from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/remove.png'
 
 function Villagers({handleRemove, villagers, match}) {
@@ -12,7 +12,7 @@ function Villagers({handleRemove, villagers, match}) {
         className="link">  
         {villager.name} </Link> 
           <img src={remove} alt="remove villager" 
-          onClick={() => {return handleRemove(villager.id)}} /> 
+          onClick={() => handleRemove(villager.id)} /> 
       </li> )
   
   return <> {list} </>

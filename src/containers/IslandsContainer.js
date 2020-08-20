@@ -45,6 +45,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {addIsland, deleteIsland} from '../actions/islandActions';
+import {removeVillager} from '../actions/villagerActions'
 import Island from '../components/islands/Island'
 import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';
@@ -81,11 +82,6 @@ function IslandsContainer({addIsland, deleteIsland, islands, history}) {
             render={(routerProps) => 
               <Island {...routerProps} 
                 islands={islands} handleDelete={handleDelete} />}/>
-
-          {/* <Route exact path={`/islands/:id/villagers`}
-            render={(routerProps) => 
-              <Villagers {...routerProps} 
-                villagers={island.villagers} />}/> */}
         </Switch>
       </>
     )
@@ -93,7 +89,8 @@ function IslandsContainer({addIsland, deleteIsland, islands, history}) {
 
 const mapStateToProps = state => {
   return {
-    islands: state.islandReducer.islands
+    islands: state.islandReducer.islands,
+    villagers: state.villagerReducer.villagers
   }
 }
 

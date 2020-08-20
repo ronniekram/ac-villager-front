@@ -60,7 +60,7 @@ function VillagersContainer({villagers, removeVillager, history}) {
           <Route path={`/villagers/:id`}
             render={(routerProps) => 
             <Villager {...routerProps} 
-                villagers={villagers} />}/>
+                villagers={villagers} handleRemove={handleRemove} />}/>
         </Switch>        
       </>
     )

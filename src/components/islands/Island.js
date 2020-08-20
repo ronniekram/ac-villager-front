@@ -70,7 +70,7 @@ function Island({islands, handleDelete, match}) {
                 {island && island.owner}
               </Card.Subtitle>
                 <p>Villagers:</p>
-                <Villagers villagers={village} />
+                <Villagers villagers={village}  />
                   <img src={islandX} alt="Delete Island?" onClick={() => {
                     return handleDelete(island.id);}} />
             </Card.Body>
