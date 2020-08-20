@@ -1,6 +1,8 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 import SearchResults from './SearchResults';
+import add from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/add.png';
 
 function SearchBar({villagers, query, setQuery}) {
 
@@ -11,7 +13,7 @@ function SearchBar({villagers, query, setQuery}) {
     if (query === '') {
       return ''
     } else {
-      return <SearchResults villagers={results} />
+      return <div> <SearchResults villagers={results}/> </div>
     }
   }
 
