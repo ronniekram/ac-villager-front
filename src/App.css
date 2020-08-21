@@ -38,6 +38,11 @@ img {
   max-width: 100%;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .navbar {
   border-bottom: 1px solid black;
   display: flex;

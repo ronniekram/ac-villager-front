@@ -22,8 +22,10 @@ function Island({islands, villagers, handleDelete, match}) {
               </Card.Subtitle>
                 <p>Villagers:</p>
                 <Villagers villagers={village}  />
-                  <img src={islandX} alt="Delete Island?" onClick={() => {
-                    return handleDelete(island.id);}} />
+                <button onClick={() => {
+                  return handleDelete(island.id);}}> 
+                   <img src={islandX} alt="Delete Island?" /> 
+                </button>
             </Card.Body>
           </Card>
         </Col>
@@ -37,3 +39,6 @@ function Island({islands, villagers, handleDelete, match}) {
   }
 
 export default Island;
+
+// <button onClick={() => {
+  // return handleDelete(island.id);}}> <img src={islandX} alt="Delete Island?" /> </button>

@@ -4,17 +4,19 @@ import { connect } from 'react-redux';
 import { removeVillager } from '../../actions/villagerActions';
 import remove from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/remove.png'
 
-function Villagers({villagers}) {
+function Villagers({villagers, removeVillager}) {
 
-
+  const handleRemove = (villager) => {
+    
+  }
 
     const list = villagers && villagers.map(villager =>
       <li key={villager.id}> 
         <Link to={`/villagers/${villager.id}`} 
         villagers={villagers} 
         className="link">  
-        {villager.name} </Link> 
-          <img src={remove} alt="remove villager" onClick={() => removeVillager(villager.id)} /> 
+        {villager.name} </Link>  
+        <button onClick={() => removeVillager(villager.id)}> <img src={remove} alt="remove villager" /></button>
       </li> )
   
   return <> {list} </>
