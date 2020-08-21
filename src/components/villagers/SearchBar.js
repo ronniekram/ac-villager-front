@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { addVillager } from '../../actions/villagerActions'
 import SearchResults from './SearchResults';
 
-function SearchBar({villagers, island}) {
+function SearchBar({villagers, island, addVillager}) {
   const [query, setQuery] = useState('')
 
   let results = villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase()))
 
   const handleAdd = (villager, island) => {
-    addVillager(villager, island)
+    addVillager(villager, island);
   }
 
 

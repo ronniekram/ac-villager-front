@@ -14,15 +14,13 @@ function SearchResults({results, island, handleAdd}) {
           return handleAdd(villager.id, island.id);}}> 
         <img src={add} alt="add villager to island" />
       </button> */}
-      <button onClick={() => console.log('clicked')}> <img src={add} alt="add villager to island" /></button>
+      <button onClick={() => handleAdd(villager.id, island.id)}> <img src={add} alt="add villager to island" /></button>
     </li>)
 
-    console.log(island)
   return (
     <>
       {list}
-    </>
-  )
+    </>)
 }
 
 export default SearchResults;

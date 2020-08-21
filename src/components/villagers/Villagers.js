@@ -6,10 +6,6 @@ import remove from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/s
 
 function Villagers({villagers, removeVillager}) {
 
-  const handleRemove = (villager) => {
-    
-  }
-
     const list = villagers && villagers.map(villager =>
       <li key={villager.id}> 
         <Link to={`/villagers/${villager.id}`} 
