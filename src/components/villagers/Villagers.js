@@ -9,7 +9,7 @@ function Villagers({villagers, removeVillager}) {
     const list = villagers && villagers.map(villager =>
       <li key={villager.id}> 
         <Link to={`/villagers/${villager.id}`} 
-        villagers={villagers} 
+        villager={villager} 
         className="link">  
         {villager.name} </Link>  
         <button onClick={() => removeVillager(villager.id)}> <img src={remove} alt="remove villager" /></button>
@@ -17,5 +17,5 @@ function Villagers({villagers, removeVillager}) {
   
   return <> {list} </>
 }
-
 export default connect(null, {removeVillager})(Villagers);
+// pass remove villager down from island?

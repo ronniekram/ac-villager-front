@@ -17,20 +17,20 @@ function SearchBar({villagers, island, addVillager}) {
     if (query === '') {
       return ''
     } else {
-      return <div> <SearchResults results={results} island={island} handleAdd={handleAdd} /> </div>
+      return <div className="column card"> <SearchResults results={results} island={island} handleAdd={handleAdd} /> </div>
     }
   }
 
   return (
-    <>
-    <input type="text" 
-      className="searchbar"
-      placeholder="Search villager by name..." 
-      value={query} 
-      onChange={(e) => setQuery(e.target.value)} />
+    <div className="column card">
+      <input type="text" 
+        className="searchbar"
+        placeholder="Search villager by name..." 
+        value={query} 
+        onChange={(e) => setQuery(e.target.value)} />
 
-      {displayResults()}
-  </>
+        {displayResults()}
+    </div>
   )
 
 }

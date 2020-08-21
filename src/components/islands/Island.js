@@ -29,16 +29,11 @@ function Island({islands, villagers, handleDelete, match}) {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4} className="column card">
-          <div className="searchbar">
+        {/* <Col md={4} className="column">
             <SearchBar villagers={villagers} island={island} />
-          </div>
-        </Col>
+        </Col> */}
     </>
     )
   }
 
 export default Island;
-
-// <button onClick={() => {
-  // return handleDelete(island.id);}}> <img src={islandX} alt="Delete Island?" /> </button>
