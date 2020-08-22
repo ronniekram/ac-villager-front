@@ -12,18 +12,13 @@ const villagerReducer = (state = { villagers: [], loading: false }, action) => {
         villagers: action.villagers,
         loading: false
       }
-      case 'ADD_VILLAGER': 
-      //   state.villagers.map(villager => {
-      //   if (villager.id == action.payload.id) {
-      //     return action.payload
-      //   } else {
-      //     return state.villagers
-      //   }
-      // })
-      return {
-        ...state,
-        villagers: [...state.villagers, action.payload]
-       }
+      case "ADD_VILLAGER":
+        return {
+           ...state,
+           villagers: state.villagers.map(villager => {
+              return villager.id == action.payload.id ? action.payload : villager
+           })
+        }
     case 'REMOVE_VILLAGER':
       state.villagers.map(villager => {
         if (villager.id !== action.payload.id) {

@@ -1,14 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Card, Col } from 'react-bootstrap';
 import Villagers from '../villagers/Villagers';
-import SearchBar from '../villagers/SearchBar'
-import islandX from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/islandX.png'
+import SearchBar from '../villagers/SearchBar';
+import islandX from '../img/islandX.png';
 
 
 function Island({islands, villagers, handleDelete, handleRemove, match}) {
   const island = islands.find(island => island.id == match.params.id)
 
-    const village = (island && island.villagers)
+    const village = villagers.filter(villager => villager.island_id == match.params.id)
     return (
       <>
         <Col md={4} className="column">
@@ -36,4 +37,11 @@ function Island({islands, villagers, handleDelete, handleRemove, match}) {
     )
   }
 
-export default Island;
+  const mapStateToProps = state => {
+    return {
+      islands: state.islandReducer.islands,
+      villagers: state.villagerReducer.villagers
+    }
+  }
+
+export default connect(mapStateToProps)(Island);

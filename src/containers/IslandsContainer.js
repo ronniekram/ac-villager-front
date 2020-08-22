@@ -38,7 +38,7 @@ function IslandsContainer({addIsland, deleteIsland, islands, villagers, history}
           <Route path={`/islands/:id`}
             render={(routerProps) => 
               <Island {...routerProps} 
-                islands={islands} villagers={villagers}handleDelete={handleDelete} />}/>
+                islands={islands}handleDelete={handleDelete} />}/>
 
           <Route path={`/search`}
             render={(routerProps) => 

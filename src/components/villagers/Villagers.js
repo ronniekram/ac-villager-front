@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { removeVillager } from '../../actions/villagerActions';
-import remove from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/remove.png'
+import remove from '../img/remove.png'
 
 function Villagers({villagers, removeVillager}) {
 
@@ -21,5 +21,6 @@ function Villagers({villagers, removeVillager}) {
   
   return <> {list} </>
 }
+
 export default connect(null, {removeVillager})(Villagers);
 // pass remove villager down from island?
