@@ -12,24 +12,24 @@ const villagerReducer = (state = { villagers: [], loading: false }, action) => {
         villagers: action.villagers,
         loading: false
       }
-    //   case 'ADD_VILLAGER': 
-    //   let villagersPlus = state.villagers.map(villager => {
-    //     if (villager.id == action.payload.id) {
-    //       return action.payload
-    //     } else {
-    //       return state.villagers
-    //     }
-    //   })
-    //   return {...state, villagers: villagersPlus}
-    // case 'REMOVE_VILLAGER':
-    //   let villagersMinus = state.villagers.map(villager => {
-    //     if (villager.id !== action.payload.id) {
-    //       return action.payload
-    //     } else {
-    //       return villager
-    //     }
-    //   })
-    //   return {...state, villagers: villagersMinus}
+      case 'ADD_VILLAGER': 
+      let villagersPlus = state.villagers.map(villager => {
+        if (villager.id == action.payload.id) {
+          return action.payload
+        } else {
+          return state.villagers
+        }
+      })
+      return {...state, villagers: villagersPlus}
+    case 'REMOVE_VILLAGER':
+      let villagersMinus = state.villagers.map(villager => {
+        if (villager.id !== action.payload.id) {
+          return action.payload
+        } else {
+          return villager
+        }
+      })
+      return {...state, villagers: villagersMinus}
     default:
       return state;
   }

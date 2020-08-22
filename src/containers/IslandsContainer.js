@@ -86,8 +86,7 @@ function IslandsContainer({addIsland, deleteIsland, islands, villagers, history}
 
           <Route path={`/villagers/search`}
             render={(routerProps) => 
-            <SearchBar {...routerProps} 
-                villagers={villagers} />}/>
+            <SearchBar {...routerProps} />}/>
         </Switch>
       </>
     )

@@ -29,9 +29,9 @@ function Island({islands, villagers, handleDelete, match}) {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4} className="column">
-            <SearchBar villagers={villagers} island={island} />
-        </Col>
+        {/* <Col md={4} className="column">
+            <SearchBar island={island} />
+        </Col> */}
     </>
     )
   }
