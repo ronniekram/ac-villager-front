@@ -23,4 +23,3 @@ function Villagers({villagers, removeVillager}) {
 }
 
 export default connect(null, {removeVillager})(Villagers);
-// pass remove villager down from island?
