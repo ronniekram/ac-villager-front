@@ -5,7 +5,7 @@ import SearchBar from '../villagers/SearchBar'
 import islandX from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/islandX.png'
 
 
-function Island({islands, villagers, handleDelete, match}) {
+function Island({islands, villagers, handleDelete, handleRemove, match}) {
   const island = islands.find(island => island.id == match.params.id)
 
     const village = (island && island.villagers)
@@ -21,7 +21,7 @@ function Island({islands, villagers, handleDelete, match}) {
                 {island && island.owner}
               </Card.Subtitle>
                 <p>Villagers:</p>
-                <Villagers villagers={village}  island={island} />
+                <Villagers villagers={village} island={island} handleRemove={handleRemove} />
                 <button onClick={() => {
                   return handleDelete(island.id);}}> 
                    <img src={islandX} alt="Delete Island?" /> 
@@ -29,9 +29,9 @@ function Island({islands, villagers, handleDelete, match}) {
             </Card.Body>
           </Card>
         </Col>
-        {/* <Col md={4} className="column">
-            <SearchBar island={island} />
-        </Col> */}
+        <Col md={4} className="column">
+            <SearchBar villagers={villagers} island={island} />
+        </Col>
     </>
     )
   }

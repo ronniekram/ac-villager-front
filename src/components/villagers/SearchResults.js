@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addVillager } from '../../actions/villagerActions'
 import add from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/add.png';
 
 function SearchResults({results, island, addVillager}) {
@@ -18,4 +20,4 @@ function SearchResults({results, island, addVillager}) {
     </>)
 }
 
-export default SearchResults;
+export default connect(null, {addVillager})(SearchResults);

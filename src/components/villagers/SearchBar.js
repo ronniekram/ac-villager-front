@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux'
-import { fetchVillagers, addVillager } from '../../actions/villagerActions'
+import React, { useState } from 'react';
 import SearchResults from './SearchResults';
 
 function SearchBar({villagers, island}) {
-  useEffect(() => {
-    fetchVillagers();
-  },[])
-
-
   const [query, setQuery] = useState('')
 
   let results = villagers && villagers.filter(villager => villager.name.toLowerCase().includes(query.toLowerCase()))
@@ -17,7 +10,7 @@ function SearchBar({villagers, island}) {
     if (query === '') {
       return ''
     } else {
-      return <div className="column card"> <SearchResults results={results} island={island} addVillager={addVillager} /> </div>
+      return <div className="column card"> <SearchResults results={results} island={island} /> </div>
     }
   }
 
@@ -35,10 +28,5 @@ function SearchBar({villagers, island}) {
 
 }
 
-const mapStateToProps = (state) => {
-  return {
-    villagers: state.villagerReducer.villagers
-  }
-}
+export default SearchBar;
 
-export default connect(mapStateToProps, {fetchVillagers, addVillager})(SearchBar);

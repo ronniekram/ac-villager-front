@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import ReactHover from 'react-hover'
 import './App.css';
 import { Container, Row } from 'react-bootstrap';
 import {fetchIslands} from './actions/islandActions';
@@ -18,7 +17,7 @@ function App({fetchIslands, fetchVillagers}) {
   useEffect(() => {
     fetchIslands();
     fetchVillagers();
-  },[])
+  },[fetchIslands, fetchVillagers])
 
     return (
       <>
