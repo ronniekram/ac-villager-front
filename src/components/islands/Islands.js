@@ -13,7 +13,7 @@ function Islands({islands}) {
   return (
     <>
       <Col md={4} className="column">
-        <ul className="card island-info">
+        <ul className="card island-info centered">
           <h4>Islands</h4>
             {list}
         </ul>

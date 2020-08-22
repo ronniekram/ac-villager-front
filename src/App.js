@@ -8,6 +8,7 @@ import {fetchVillagers} from './actions/villagerActions';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Welcome from './components/Welcome';
 import IslandsContainer from './containers/IslandsContainer';
 import VillagersContainer from './containers/VillagersContainer';
 
@@ -29,7 +30,7 @@ function App({fetchIslands, fetchVillagers}) {
           <Row>
           {/* //Route renders component based url-- defines which path to render and what component should be registered for the path
               // exact path renders specific path (prevents "Home Page" (path '/') from being rendered on every page (i.e. '/about')) */}
-            {/* <Route exact path="/" render={() => <Header />} /> */}
+            <Route exact path="/" render={() => <Welcome />} />
             <Route path="/islands" render={(routerProps) => <IslandsContainer {...routerProps} /> } />
             <Route path="/villagers" render={(routerProps) => <VillagersContainer {...routerProps} />} />
           </Row>

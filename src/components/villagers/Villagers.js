@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { removeVillager } from '../../actions/villagerActions';
 import remove from '../img/remove.png'
@@ -12,14 +11,13 @@ function Villagers({villagers, removeVillager}) {
 
     const list = villagers && villagers.map(villager =>
       <li key={villager.id}> 
-        <Link to={`/villagers/${villager.id}`} 
-        villager={villager} 
-        className="link">  
-        {villager.name} </Link>  
+        {villager.name} 
         <button onClick={() => handleRemove(villager.id)}> <img src={remove} alt="remove villager" /></button>
       </li> )
   
-  return <> {list} </>
+  return <> 
+    {list} 
+  </>
 }
 
 export default connect(null, {removeVillager})(Villagers);

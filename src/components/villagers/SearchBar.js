@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addVillager } from '../../actions/villagerActions'
+import { addVillager } from '../../actions/villagerActions';
 import SearchResults from './SearchResults';
 
 function SearchBar({villagers, island, addVillager}) {

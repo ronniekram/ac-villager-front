@@ -4,9 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import {addVillager} from '../actions/villagerActions';
 import Villager from '../components/villagers/Villager';
 import Villagers from '../components/villagers/Villagers';
-import Island from '../components/islands/Island'
 
-function VillagersContainer({villagers, islands, history}) {
+function VillagersContainer({villagers}) {
 
     return (
       <>
@@ -19,10 +18,6 @@ function VillagersContainer({villagers, islands, history}) {
             render={(routerProps) => 
             <Villager {...routerProps} 
                 villagers={villagers} />}/>
-          {/* <Route path={`/islands/:id`}
-            render={(routerProps) => 
-              <Island {...routerProps} 
-                islands={islands} villagers={villagers} />}/> */}
         </Switch>        
       </>
     )

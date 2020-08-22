@@ -124,6 +124,11 @@ button {
   padding: 4px;
 }
 
+.centered {
+  display: flex;
+ justify-content: center;
+}
+
 .footer {
   margin-top: 5px;
   padding-top: 15px;

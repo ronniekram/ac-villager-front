@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import {addIsland, deleteIsland} from '../actions/islandActions';
 import SearchBar from '../components/villagers/SearchBar';
+import Villager from '../components/villagers/Villager'
 import Island from '../components/islands/Island'
 import Islands from '../components/islands/Islands';
 import IslandInput from '../components/islands/IslandInput';
@@ -43,6 +44,11 @@ function IslandsContainer({addIsland, deleteIsland, islands, villagers, history}
           <Route path={`/search`}
             render={(routerProps) => 
             <SearchBar {...routerProps} 
+                villagers={villagers} />}/>
+
+          <Route path={`/villager/:id`}
+            render={(routerProps) => 
+            <Villager {...routerProps} 
                 villagers={villagers} />}/>
         </Switch>
       </>

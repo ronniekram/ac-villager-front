@@ -6,7 +6,7 @@ function IslandInput({setName, setOwner, name, owner, handleSubmit}) {
 
   return (
         <Col md="auto" className="column">
-          <Form onSubmit={handleSubmit} className="container card">
+          <Form onSubmit={handleSubmit} className="container card centered">
             <h4>Create An Island</h4>
             <Form.Label size="sm" >Island Name: </Form.Label>
               <Form.Control size="sm" type='text' name="name" value={name} onChange={(e) => setName(e.target.value)} /> 
