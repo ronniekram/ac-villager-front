@@ -31,7 +31,7 @@ function Island({islands, villagers, handleDelete, handleRemove, match}) {
           </Card>
         </Col>
         <Col md={4} className="column">
-            <SearchBar villagers={villagers} island={island} />
+            <SearchBar island={island} />
         </Col>
     </>
     )

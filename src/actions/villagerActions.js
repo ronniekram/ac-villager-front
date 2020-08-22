@@ -45,6 +45,7 @@ export const removeVillager = (villagerId) => {
         island_id: ''
       })
     })
+    .then(resp => resp.json())
     .then(villager => dispatch({type: 'REMOVE_VILLAGER', payload: villager}))
   }
 }
