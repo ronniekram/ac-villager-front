@@ -13,7 +13,6 @@ export function fetchVillagers() {
   }
 }
 
-
 export const addVillager = (villagerId, islandId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/villagers/${villagerId}`, {

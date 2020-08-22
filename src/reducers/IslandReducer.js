@@ -15,11 +15,12 @@ const islandReducer = (state = {islands: [], loading: false}, action) => {
     case 'ADD_ISLAND':
       return {...state, islands: [...state.islands, action.payload]}
     case 'DELETE_ISLAND':
-      const islandsThree = state.islands.filter(island => island.id !== action.id)
-      return {...state, islandsThree}
+      const islands = state.islands.filter(island => island.id !== action.id)
+      return {...state, islands}
     default: 
       return state;
   }
+
 }
 
 export default islandReducer;
