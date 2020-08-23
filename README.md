@@ -1,6 +1,7 @@
 # Village Watch: New Horizons
 ## Allows a user to keep track of the villagers on their Animal Crossing island, add and remove villagers as well as viewing information about them.
 
+  ![Village Watch Screenshot](https://github.com/ronniekram/ac-villager-front/blob/master/src/components/img/village-watch-screen-grab.png?raw=true)
 ### Uses:
 
 #### Frontend: HTML, CSS, React, Redux,  React Bootstrap UI -- built with create-react-app
