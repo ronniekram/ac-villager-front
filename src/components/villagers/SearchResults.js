@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col } from 'react-bootstrap'
-import Villager from './Villager';
+import Villager from './Villager'
 import add from '../img/add.png';
 
 function SearchResults({results, island, addVillager}) {
-
-  // const showCard = villager => {
-  //   return <Col md={4} className="column" ><Villager villager={villager} /> </Col>
-  // }
 
   const list = results && results.map(villager => 
     <li key={villager.id}>
@@ -21,6 +17,9 @@ function SearchResults({results, island, addVillager}) {
   return (
     <>
       {list}
+      {/* <Col md={4}>
+        <Villager villagers={villagers} />
+      </Col> */}
     </>)
 }
 
