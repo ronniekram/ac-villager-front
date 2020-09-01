@@ -1,16 +1,9 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import { useHistory } from "react-router-dom";
 
 function Villager({match, villagers}) {
   const villager = villagers && villagers.find(villager => 
     villager.id == match.params.id)
-
-    let history = useHistory();
-
-  // const backToIsland = () => {
-  //   history.goBack();
-  // }
 
   return (
     <>
@@ -30,8 +23,6 @@ function Villager({match, villagers}) {
               </Card.Text>
           </Card.Body>
         </Card>
-
-          <button onClick={() => history.goBack()}>Back to Island</button>
         </Col>
     </>
   )

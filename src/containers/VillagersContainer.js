@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+import {addVillager} from '../actions/villagerActions';
 import Villager from '../components/villagers/Villager';
 import Villagers from '../components/villagers/Villagers';
 
@@ -29,4 +30,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(VillagersContainer);
+export default connect(mapStateToProps, {addVillager})(VillagersContainer);
