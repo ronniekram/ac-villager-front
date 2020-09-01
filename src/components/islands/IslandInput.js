@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Col } from 'react-bootstrap';
-import create from '/Users/HotRonnie/Desktop/ac-villagers-react/villager-front/src/components/img/create.png'
+import create from '../img/create.png'
 
 function IslandInput({setName, setOwner, name, owner, handleSubmit}) {
 
