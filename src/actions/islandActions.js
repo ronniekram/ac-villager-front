@@ -4,7 +4,7 @@
 export function fetchIslands() {
   return (dispatch) => {
     dispatch({type: 'FETCH_ISLANDS'})
-    fetch('http://localhost:3000/islands')
+    fetch('https://ac-villager-api.herokuapp.com/islands')
     .then(resp => resp.json())
     .then(data => dispatch({
       type: 'ISLANDS_FETCHED',
@@ -16,7 +16,7 @@ export function fetchIslands() {
 
 export const addIsland = (data) => {
   return (dispatch) => {
-    fetch('http://localhost:3000/islands', {
+    fetch('https://ac-villager-api.herokuapp.com/islands', {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -31,7 +31,7 @@ export const addIsland = (data) => {
 
 export const deleteIsland = (islandId) => {
   return (dispatch) => {
-    return fetch(`http://localhost:3000/islands/${islandId}`, {
+    return fetch(`https://ac-villager-api.herokuapp.com/islands/${islandId}`, {
       method: 'DELETE'
     })
     .then(island => dispatch({type: 'DELETE_ISLAND', payload: island}))

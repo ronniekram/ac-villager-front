@@ -3,7 +3,7 @@
 export function fetchVillagers() {
   return (dispatch) => {
     dispatch({type: 'FETCH_VILLAGERS'})
-    fetch('http://localhost:3000/villagers')
+    fetch('https://ac-villager-api.herokuapp.com/villagers')
     .then(resp => resp.json())
     .then(data => dispatch({
       type: 'VILLAGERS_FETCHED',
@@ -15,7 +15,7 @@ export function fetchVillagers() {
 
 export const addVillager = (villagerId, islandId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/villagers/${villagerId}`, {
+    fetch(`https://ac-villager-api.herokuapp.com/villagers/${villagerId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export const addVillager = (villagerId, islandId) => {
 
 export const removeVillager = (villagerId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/villagers/${villagerId}`, {
+    fetch(`https://ac-villager-api.herokuapp.com/villagers/${villagerId}`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
