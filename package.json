@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.2",
     "cuid": "^2.1.8",
+    "express": "^4.17.1",
     "history": "^5.0.0",
     "path-to-regexp": "^6.1.0",
     "react": "^16.13.1",
