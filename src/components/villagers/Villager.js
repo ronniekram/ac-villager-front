@@ -1,9 +1,12 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
 
 function Villager({match, villagers}) {
   const villager = villagers && villagers.find(villager => 
     villager.id == match.params.id)
+
+  let history = useHistory();  
 
   return (
     <>
