@@ -23,6 +23,7 @@ function Villager({match, villagers}) {
               </Card.Text>
           </Card.Body>
         </Card>
+        <button onClick={() => history.goBack()}>Back to Island</button>
         </Col>
     </>
   )
