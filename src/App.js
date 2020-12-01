@@ -22,7 +22,7 @@ function App({fetchIslands, fetchVillagers}) {
 
     return (
       <>
-      <Container className="container">
+      <Container>
       {/* //Router gives the ability to handle routing (wrap the components you want to have routing) */}
         <Router> 
           <Header/>
