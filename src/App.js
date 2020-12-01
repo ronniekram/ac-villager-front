@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Welcome from './components/Welcome';
+import AC2 from './components/img/AC2.png'
 import IslandsContainer from './containers/IslandsContainer';
 import VillagersContainer from './containers/VillagersContainer';
 
@@ -25,7 +26,7 @@ function App({fetchIslands, fetchVillagers}) {
       <Container className="container">
       {/* //Router gives the ability to handle routing (wrap the components you want to have routing) */}
         <Router> 
-          <Header />
+          <Header AC2={AC2}/>
           <Navbar />
           <Row>
           {/* //Route renders component based url-- defines which path to render and what component should be registered for the path

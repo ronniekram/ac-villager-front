@@ -1,13 +1,13 @@
 import React from 'react';
-import AC2 from './img/AC2.png';
+import acheader from '../components/img/acheader.png';
 // import { Row } from 'react-bootstrap';
 
 function Header() {
-  // let imageLink = "https://i.imgur.com/RcLWdWZ.jpeg"
+  // let imageLink = "https://raw.githubusercontent.com/ronniekram/ac-villager-front/master/src/components/img/AC2.png"
   return (
     <>
     <div className="header-container">
-        <img src={AC2} alt="animal crossing" className="nav-img" />
+        <img src={acheader} alt="animal crossing" className="nav-img" />
     </div>
     </>
   )
